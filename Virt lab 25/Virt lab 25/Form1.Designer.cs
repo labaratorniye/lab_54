@@ -31,27 +31,27 @@ namespace Virt_lab_25
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.closemain = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.right = new System.Windows.Forms.Button();
-            this.left = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button6 = new System.Windows.Forms.Button();
             this.nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.l = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.n = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.T = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sqrT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.results = new System.Windows.Forms.Button();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.stringlong = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -65,21 +65,21 @@ namespace Virt_lab_25
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // closemain
             // 
-            this.button1.Location = new System.Drawing.Point(894, 373);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 43);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Выход";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.closemain.Location = new System.Drawing.Point(894, 373);
+            this.closemain.Name = "closemain";
+            this.closemain.Size = new System.Drawing.Size(98, 43);
+            this.closemain.TabIndex = 1;
+            this.closemain.Text = "Выход";
+            this.closemain.UseVisualStyleBackColor = true;
+            this.closemain.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(802, 399);
+            this.button2.Location = new System.Drawing.Point(791, 373);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(97, 43);
             this.button2.TabIndex = 5;
             this.button2.Text = "Измерить";
             this.button2.UseVisualStyleBackColor = true;
@@ -102,6 +102,7 @@ namespace Virt_lab_25
             this.button3.TabIndex = 10;
             this.button3.Text = "Методические материалы";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -120,6 +121,7 @@ namespace Virt_lab_25
             this.button5.TabIndex = 12;
             this.button5.Text = "Порядок выполнения работы";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // numericUpDown1
             // 
@@ -127,29 +129,6 @@ namespace Virt_lab_25
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(59, 20);
             this.numericUpDown1.TabIndex = 14;
-            // 
-            // right
-            // 
-            this.right.Location = new System.Drawing.Point(837, 373);
-            this.right.Name = "right";
-            this.right.Size = new System.Drawing.Size(40, 23);
-            this.right.TabIndex = 7;
-            this.right.UseVisualStyleBackColor = true;
-            // 
-            // left
-            // 
-            this.left.Location = new System.Drawing.Point(745, 373);
-            this.left.Name = "left";
-            this.left.Size = new System.Drawing.Size(40, 23);
-            this.left.TabIndex = 6;
-            this.left.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(791, 373);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(40, 20);
-            this.textBox2.TabIndex = 8;
             // 
             // dataGridView1
             // 
@@ -166,15 +145,6 @@ namespace Virt_lab_25
             this.dataGridView1.RowHeadersWidth = 10;
             this.dataGridView1.Size = new System.Drawing.Size(325, 260);
             this.dataGridView1.TabIndex = 15;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(12, 12);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(158, 40);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "Проверка результатов";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // nomer
             // 
@@ -218,29 +188,54 @@ namespace Virt_lab_25
             this.g.Name = "g";
             this.g.Width = 74;
             // 
+            // results
+            // 
+            this.results.Location = new System.Drawing.Point(12, 12);
+            this.results.Name = "results";
+            this.results.Size = new System.Drawing.Size(158, 40);
+            this.results.TabIndex = 16;
+            this.results.Text = "Проверка результатов";
+            this.results.UseVisualStyleBackColor = true;
+            this.results.Click += new System.EventHandler(this.results_Click);
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            this.fileSystemWatcher1.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher1_Changed);
+            // 
+            // stringlong
+            // 
+            this.stringlong.BackColor = System.Drawing.Color.White;
+            this.stringlong.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.stringlong.Location = new System.Drawing.Point(645, 392);
+            this.stringlong.Name = "stringlong";
+            this.stringlong.Size = new System.Drawing.Size(93, 13);
+            this.stringlong.TabIndex = 17;
+            this.stringlong.Text = "Длина нити";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 428);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.stringlong);
+            this.Controls.Add(this.results);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.right);
-            this.Controls.Add(this.left);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.closemain);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Лабораторная работа №25";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,24 +244,23 @@ namespace Virt_lab_25
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button closemain;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button right;
-        private System.Windows.Forms.Button left;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button results;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn l;
         private System.Windows.Forms.DataGridViewTextBoxColumn n;
         private System.Windows.Forms.DataGridViewTextBoxColumn T;
         private System.Windows.Forms.DataGridViewTextBoxColumn sqrT;
         private System.Windows.Forms.DataGridViewTextBoxColumn g;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.TextBox stringlong;
     }
 }
 
