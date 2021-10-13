@@ -49,5 +49,12 @@ namespace Virt_lab_25
             poryadok.Show();
             
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            double g, l, T;
+            l = Convert.ToDouble(numericUpDown1);
+            // T = 2 * Math.PI * Math.Sqrt(l / g);
+        }
     }
 }
