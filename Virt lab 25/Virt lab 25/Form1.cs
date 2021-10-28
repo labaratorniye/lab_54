@@ -18,6 +18,7 @@ namespace Virt_lab_25
         {
             InitializeComponent();
         }
+        public int polojenie = 0;
 
         private void results_Click(object sender, System.EventArgs e)
         {
@@ -26,7 +27,6 @@ namespace Virt_lab_25
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Invalidate();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,11 +49,11 @@ namespace Virt_lab_25
             poryadok.Show();
             
         }
-        int b = 0;
         private void button2_Click_1(object sender, EventArgs e)
         {
-            b = 1;
+            polojenie = 2;
             this.Invalidate();
+            timer2.Start();
             //double g, l, T;
             //l = Convert.ToDouble(numericUpDown1);
             // T = 2 * Math.PI * Math.Sqrt(l / g);
@@ -102,12 +102,9 @@ namespace Virt_lab_25
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (b == 0)
-            { 
+            if (polojenie == 0)
                 DrawCircleAndLine(1);
-                b++;
-            }
-            
+                timer1.Stop();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -116,22 +113,35 @@ namespace Virt_lab_25
         }
         private void timer2_Tick(object sender, EventArgs e)
         {
-                if ((b > 0) && (b < 5))
-                {
-                    DrawCircleAndLine(b);
-                    b++;
-                }
-                else
-                {
-                    b = 0;
-                }
+            if ((polojenie < 5) && (polojenie>1))
+            {
+                //this.Invalidate();
+                DrawCircleAndLine(polojenie);
+                label1.Text = polojenie.ToString();
+                polojenie++;
+            }
+            else if (polojenie != 0)
+            {
+                polojenie = 1;
+                timer2.Stop();
+                timer1.Start();
+            }
         }
+        
         private void timer3_Tick(object sender, EventArgs e)
         {
-            if ((b > 1) && (b < 5))
+            if ((polojenie < 5) && (polojenie > 1))
+                this.Invalidate();
+            if (polojenie == 1)
             {
                 this.Invalidate();
+                polojenie = 0;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
