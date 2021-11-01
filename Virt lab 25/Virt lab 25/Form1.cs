@@ -25,10 +25,6 @@ namespace Virt_lab_25
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -49,14 +45,22 @@ namespace Virt_lab_25
             poryadok.Show();
             
         }
+        double time = 0;
+        double period = 0;
         private void button2_Click_1(object sender, EventArgs e)
         {
-            polojenie = 2;
-            this.Invalidate();
-            timer2.Start();
-            //double g, l, T;
-            //l = Convert.ToDouble(numericUpDown1);
-            // T = 2 * Math.PI * Math.Sqrt(l / g);
+            int number = dataGridView1.Rows.Add(); 
+            dataGridView1.Rows[number].Cells[0].Value = number + 1;  // вписываем номер № действия
+            dataGridView1.Rows[number].Cells[1].Value = numericUpDown1.Value / 100; // вписываем длину нити
+            dataGridView1.Rows[number].Cells[2].Value = time; // ввод времени t
+            dataGridView1.Rows[number].Cells[3].Value = 10; // кол-во колебаний, всегда 10
+            dataGridView1.Rows[number].Cells[4].Value = period; // ввод периода T
+            if (dataGridView1.Rows[number].Cells[4].Value == null)
+                dataGridView1.Rows[number].Cells[5].Value = 0;
+            else
+            {
+                dataGridView1.Rows[number].Cells[5].Value = Math.Pow((double)dataGridView1.Rows[number].Cells[4].Value, 2); // ввод квадрата периода (T^2)
+            }
         }
         private void DrawCircleAndLine(int a)
         {
@@ -92,11 +96,6 @@ namespace Virt_lab_25
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }
@@ -140,6 +139,11 @@ namespace Virt_lab_25
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }
