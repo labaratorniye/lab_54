@@ -40,13 +40,6 @@ namespace Virt_lab_25
             this.button5 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.results = new System.Windows.Forms.Button();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.stringlong = new System.Windows.Forms.TextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.l = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +47,13 @@ namespace Virt_lab_25
             this.T = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sqrT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.check_Results = new System.Windows.Forms.Button();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.stringlong = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -180,61 +180,6 @@ namespace Virt_lab_25
             this.dataGridView1.Size = new System.Drawing.Size(424, 260);
             this.dataGridView1.TabIndex = 15;
             // 
-            // results
-            // 
-            this.results.Location = new System.Drawing.Point(12, 12);
-            this.results.Name = "results";
-            this.results.Size = new System.Drawing.Size(158, 40);
-            this.results.TabIndex = 16;
-            this.results.Text = "Проверка результатов";
-            this.results.UseVisualStyleBackColor = true;
-            this.results.Click += new System.EventHandler(this.results_Click);
-            // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
-            this.fileSystemWatcher1.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher1_Changed);
-            // 
-            // stringlong
-            // 
-            this.stringlong.BackColor = System.Drawing.Color.White;
-            this.stringlong.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.stringlong.Location = new System.Drawing.Point(645, 392);
-            this.stringlong.Name = "stringlong";
-            this.stringlong.ReadOnly = true;
-            this.stringlong.Size = new System.Drawing.Size(93, 13);
-            this.stringlong.TabIndex = 17;
-            this.stringlong.Text = "Длина нити";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // timer2
-            // 
-            this.timer2.Enabled = true;
-            this.timer2.Interval = 1500;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // timer3
-            // 
-            this.timer3.Enabled = true;
-            this.timer3.Interval = 1000;
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(546, 282);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "0";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // nomer
             // 
             this.nomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -295,6 +240,61 @@ namespace Virt_lab_25
             this.g.Name = "g";
             this.g.Width = 74;
             // 
+            // check_Results
+            // 
+            this.check_Results.Location = new System.Drawing.Point(12, 12);
+            this.check_Results.Name = "check_Results";
+            this.check_Results.Size = new System.Drawing.Size(158, 40);
+            this.check_Results.TabIndex = 16;
+            this.check_Results.Text = "Проверка результатов";
+            this.check_Results.UseVisualStyleBackColor = true;
+            this.check_Results.Click += new System.EventHandler(this.check_Results_Click);
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            this.fileSystemWatcher1.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher1_Changed);
+            // 
+            // stringlong
+            // 
+            this.stringlong.BackColor = System.Drawing.Color.White;
+            this.stringlong.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.stringlong.Location = new System.Drawing.Point(645, 392);
+            this.stringlong.Name = "stringlong";
+            this.stringlong.ReadOnly = true;
+            this.stringlong.Size = new System.Drawing.Size(93, 13);
+            this.stringlong.TabIndex = 17;
+            this.stringlong.Text = "Длина нити";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 1500;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // timer3
+            // 
+            this.timer3.Enabled = true;
+            this.timer3.Interval = 1000;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(546, 282);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(13, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "0";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,7 +304,7 @@ namespace Virt_lab_25
             this.ClientSize = new System.Drawing.Size(1004, 428);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.stringlong);
-            this.Controls.Add(this.results);
+            this.Controls.Add(this.check_Results);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button5);
@@ -337,7 +337,7 @@ namespace Virt_lab_25
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button results;
+        private System.Windows.Forms.Button check_Results;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.TextBox stringlong;
         private System.Windows.Forms.Timer timer1;

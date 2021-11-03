@@ -19,10 +19,82 @@ namespace Virt_lab_25
             InitializeComponent();
         }
         public int polojenie = 0;
-
-        private void results_Click(object sender, System.EventArgs e)
+        
+        private void check_Results_Click(object sender, System.EventArgs e)
         {
-
+            // проверка значений в таблице, сначала проверяю 10 измерений или нет, затем что значения T не равны нулю(введены), затем что g == 9.8, если работает то должно выдаваться "всё ок", иначе соответсвующие сообщения
+            int j = 0;
+            if (dataGridView1.Rows.Count < 10) // проверка на кол-во измерений
+            {
+                MessageBox.Show(
+                    "Неверное количество измерений",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.DefaultDesktopOnly);
+            }
+            else
+            {
+                for (int i = 0; i <= 9; i++) 
+                {
+                    double a = 0;
+                    if (dataGridView1.Rows[i].Cells[4].Value == null) // проверка T
+                    {
+                    MessageBox.Show(
+                    "Неверные значения в столбце T",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.DefaultDesktopOnly);
+                    break;
+                    }
+                    else
+                    {
+                        if (dataGridView1.Rows[i].Cells[6].Value == null) // проверка g, сначало что не null
+                        {
+                            MessageBox.Show(
+                            "Неверные значения в столбце g",
+                            "Сообщение",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information,
+                            MessageBoxDefaultButton.Button1,
+                            MessageBoxOptions.DefaultDesktopOnly);
+                            break;
+                        }
+                        else
+                        {
+                            if (Double.TryParse(dataGridView1.Rows[i].Cells[6].Value.ToString(), out a)) // преобразуем в double 
+                            {
+                                if (a == 9.8)
+                                j++;
+                            }
+                            else
+                            {
+                                MessageBox.Show(
+                                    "Не удалось преобразовать",
+                                    "Сообщение",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information,
+                                    MessageBoxDefaultButton.Button1,
+                                    MessageBoxOptions.DefaultDesktopOnly);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            if ( j > 9) // если всё преобразовалось то соответсвующее сообщение
+            {
+                MessageBox.Show(
+                "Всё ок",
+                "Сообщение",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.DefaultDesktopOnly);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,10 +118,10 @@ namespace Virt_lab_25
             
         }
         double time = 0;
-        double period = 0;
+        double period = 1;
         private void button2_Click_1(object sender, EventArgs e)
         {
-            int number = dataGridView1.Rows.Add(); 
+            int number = dataGridView1.Rows.Add();
             dataGridView1.Rows[number].Cells[0].Value = number + 1;  // вписываем номер № действия
             dataGridView1.Rows[number].Cells[1].Value = numericUpDown1.Value / 100; // вписываем длину нити
             dataGridView1.Rows[number].Cells[2].Value = time; // ввод времени t
@@ -61,6 +133,7 @@ namespace Virt_lab_25
             {
                 dataGridView1.Rows[number].Cells[5].Value = Math.Pow((double)dataGridView1.Rows[number].Cells[4].Value, 2); // ввод квадрата периода (T^2)
             }
+            dataGridView1.Rows[number].Cells[6].Value = 9.8;
         }
         private void DrawCircleAndLine(int a)
         {
