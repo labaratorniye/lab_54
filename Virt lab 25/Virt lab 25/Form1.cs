@@ -18,6 +18,7 @@ namespace Virt_lab_25
         public Form1()
         {
             InitializeComponent();
+            pictureBox1.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,12 +43,17 @@ namespace Virt_lab_25
         }
         private void button2_Click_1(object sender, EventArgs e)
         {
-            postionMajatnik = 2;
-            this.Invalidate();
-            timer2.Start();
-            //double g, l, T;
-            //l = Convert.ToDouble(numericUpDown1);
-            // T = 2 * Math.PI * Math.Sqrt(l / g);
+            if (!pictureBox1.Enabled)
+            {
+                pictureBox1.Enabled = true;
+                timer1.Start();
+            } else
+            {
+                pictureBox1.Enabled = false;
+                timer1.Stop();
+            }
+            
+
         }
    
 
@@ -115,6 +121,26 @@ namespace Virt_lab_25
                 MessageBox.Show("Некоректные данные(Формат записи дробей: 1,33)");
                 dataGridView1[e.ColumnIndex, e.RowIndex].Value = "";
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            label2.Text = numericUpDown1.Value.ToString();
         }
     }
 }
