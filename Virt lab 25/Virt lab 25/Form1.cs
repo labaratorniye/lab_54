@@ -95,5 +95,26 @@ namespace Virt_lab_25
         {
 
         }
+
+        static bool checkNumberText(object number)
+        {
+            if (!double.TryParse(number.ToString(), out _))
+            {
+                return (false);
+            } else
+            {
+                return (true);
+            }
+
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!checkNumberText(dataGridView1[e.ColumnIndex, e.RowIndex].Value))
+            {
+                MessageBox.Show("Некоректные данные(Формат записи дробей: 1,33)");
+                dataGridView1[e.ColumnIndex, e.RowIndex].Value = "";
+            }
+        }
     }
 }

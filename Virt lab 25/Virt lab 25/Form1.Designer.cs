@@ -161,6 +161,7 @@ namespace Virt_lab_25
             this.dataGridView1.RowHeadersWidth = 10;
             this.dataGridView1.Size = new System.Drawing.Size(424, 260);
             this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
             // nomer
             // 
