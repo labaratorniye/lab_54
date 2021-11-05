@@ -54,9 +54,14 @@ namespace Virt_lab_25
             polojenie = 2;
             this.Invalidate();
             timer2.Start();
-            //double g, l, T;
-            //l = Convert.ToDouble(numericUpDown1);
-            // T = 2 * Math.PI * Math.Sqrt(l / g);
+            double g, l, T, t, n=10;
+            l = Convert.ToDouble(numericUpDown1.Value)/100;
+            Random rand = new Random();
+            g = Convert.ToDouble(9.7+rand.NextDouble()*(9.9-9.7));
+            T = 2*Math.PI*Math.Sqrt(l / g);
+            t = T * n;
+            t = Math.Round(t, 2);
+            textBox1.Text = Convert.ToString(t);
         }
         private void DrawCircleAndLine(int a)
         {
