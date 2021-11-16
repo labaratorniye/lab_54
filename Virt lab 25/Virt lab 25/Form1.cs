@@ -43,7 +43,7 @@ namespace Virt_lab_25
                     if (dataGridView1.Rows[i].Cells[4].Value == null) // проверка T
                     {
                     MessageBox.Show(
-                    "Неверные значения в столбце T",
+                    "ячейки значений T пусты",
                     "Сообщение",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information,
@@ -56,7 +56,7 @@ namespace Virt_lab_25
                         if (dataGridView1.Rows[i].Cells[6].Value == null) // проверка g, сначало что не null
                         {
                             MessageBox.Show(
-                            "Неверные значения в столбце g",
+                            "ячейки значений g пусты",
                             "Сообщение",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information,
@@ -90,6 +90,16 @@ namespace Virt_lab_25
             {
                 MessageBox.Show(
                 "Всё ок",
+                "Сообщение",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.DefaultDesktopOnly);
+            }
+            else
+            {
+                MessageBox.Show(
+                "Неверные значения g",
                 "Сообщение",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information,
@@ -135,6 +145,9 @@ namespace Virt_lab_25
                 dataGridView1.Rows[number].Cells[5].Value = Math.Pow((double)dataGridView1.Rows[number].Cells[4].Value, 2); // ввод квадрата периода (T^2)
             }
             dataGridView1.Rows[number].Cells[6].Value = 9.8;
+            postionMajatnik = 2;
+            this.Invalidate();
+            timer2.Start();
         }
    
 

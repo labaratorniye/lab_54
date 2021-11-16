@@ -223,12 +223,12 @@ namespace Virt_lab_25
             // 
             // check_Results
             // 
-            this.results.Location = new System.Drawing.Point(791, 327);
-            this.results.Name = "results";
-            this.results.Size = new System.Drawing.Size(201, 40);
-            this.results.TabIndex = 16;
-            this.results.Text = "Проверка результатов";
-            this.results.UseVisualStyleBackColor = true;
+            this.check_Results.Location = new System.Drawing.Point(791, 322);
+            this.check_Results.Name = "check_Results";
+            this.check_Results.Size = new System.Drawing.Size(97, 45);
+            this.check_Results.TabIndex = 19;
+            this.check_Results.Text = "Проверить результаты";
+            this.check_Results.Click += new System.EventHandler(this.check_Results_Click);
             // 
             // fileSystemWatcher1
             // 
