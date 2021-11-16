@@ -48,12 +48,15 @@ namespace Virt_lab_25
             this.check_Results = new System.Windows.Forms.Button();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.stringlong = new System.Windows.Forms.TextBox();
+            /*
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            */
             this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+
+            //((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
@@ -250,6 +253,7 @@ namespace Virt_lab_25
             // 
             // timer1
             // 
+            /*
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
@@ -274,7 +278,8 @@ namespace Virt_lab_25
             this.label1.Size = new System.Drawing.Size(13, 13);
             this.label1.TabIndex = 18;
             this.label1.Text = "0";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            */
+           //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -292,7 +297,7 @@ namespace Virt_lab_25
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1339, 527);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            //this.Controls.Add(this.label1);
             this.Controls.Add(this.stringlong);
             this.Controls.Add(this.check_Results);
             this.Controls.Add(this.dataGridView1);
@@ -337,10 +342,10 @@ namespace Virt_lab_25
         private System.Windows.Forms.DataGridViewTextBoxColumn T;
         private System.Windows.Forms.DataGridViewTextBoxColumn sqrT;
         private System.Windows.Forms.DataGridViewTextBoxColumn g;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Timer timer3;
-        private System.Windows.Forms.Label label1;
+        //private System.Windows.Forms.Timer timer1;
+       // private System.Windows.Forms.Timer timer2;
+       // private System.Windows.Forms.Timer timer3;
+       // private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
     }
 }

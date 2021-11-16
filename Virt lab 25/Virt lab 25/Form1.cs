@@ -147,7 +147,6 @@ namespace Virt_lab_25
             dataGridView1.Rows[number].Cells[6].Value = 9.8;
             postionMajatnik = 2;
             this.Invalidate();
-            timer2.Start();
             double g, l, T, t, n=10;
             l = Convert.ToDouble(numericUpDown1.Value)/100;
             Random rand = new Random();
@@ -157,38 +156,7 @@ namespace Virt_lab_25
             t = Math.Round(t, 2);
             textBox1.Text = Convert.ToString(t);
         }
-        private void DrawCircleAndLine(int a)
-        {
-            System.Drawing.Pen myPen = new System.Drawing.Pen(System.Drawing.Color.Black);
-            System.Drawing.Graphics formGraphics;
-            formGraphics = this.CreateGraphics();
-            //formGraphics.DrawLine(myPen, 750, 25, 750, 100);
-            //formGraphics.DrawEllipse(myPen, 725, 100, 50, 50);
-            if (a == 1)
-            {
-                formGraphics.DrawLine(myPen, 800, 25, 800, 100);
-                formGraphics.DrawEllipse(myPen, 775, 100, 50, 50);
-            }
-            else if (a == 2)
-            {
-                formGraphics.DrawLine(myPen, 800, 25, 725, 50);
-                formGraphics.DrawEllipse(myPen, 675, 25, 50, 50);
 
-            }
-            else if (a == 3)
-            {
-                formGraphics.DrawLine(myPen, 800, 25, 800, 100);
-                formGraphics.DrawEllipse(myPen, 775, 100, 50, 50);
-
-            }
-            else if (a == 4) 
-            {
-                formGraphics.DrawLine(myPen, 800, 25, 875, 50);
-                formGraphics.DrawEllipse(myPen, 875, 25, 50, 50);
-            }
-            myPen.Dispose();
-            formGraphics.Dispose();
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
