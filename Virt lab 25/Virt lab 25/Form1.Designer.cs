@@ -30,8 +30,6 @@ namespace Virt_lab_25
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.closemain = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -54,23 +52,10 @@ namespace Virt_lab_25
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(473, 124);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(108, 92);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // closemain
             // 
@@ -105,7 +90,7 @@ namespace Virt_lab_25
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(442, 12);
+            this.button3.Location = new System.Drawing.Point(275, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(179, 40);
             this.button3.TabIndex = 10;
@@ -115,7 +100,7 @@ namespace Virt_lab_25
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(343, 12);
+            this.button4.Location = new System.Drawing.Point(176, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(93, 40);
             this.button4.TabIndex = 11;
@@ -124,7 +109,7 @@ namespace Virt_lab_25
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(179, 12);
+            this.button5.Location = new System.Drawing.Point(12, 12);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(158, 40);
             this.button5.TabIndex = 12;
@@ -186,7 +171,6 @@ namespace Virt_lab_25
             this.nomer.HeaderText = "№";
             this.nomer.MinimumWidth = 6;
             this.nomer.Name = "nomer";
-            this.nomer.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.nomer.Width = 43;
             // 
             // l
@@ -195,7 +179,6 @@ namespace Virt_lab_25
             this.l.HeaderText = "l,м";
             this.l.MinimumWidth = 6;
             this.l.Name = "l";
-            this.l.ReadOnly = true;
             this.l.Width = 45;
             // 
             // Column1
@@ -212,7 +195,6 @@ namespace Virt_lab_25
             this.n.HeaderText = "n";
             this.n.MinimumWidth = 6;
             this.n.Name = "n";
-            this.n.ReadOnly = true;
             this.n.Width = 38;
             // 
             // T
@@ -229,7 +211,6 @@ namespace Virt_lab_25
             this.sqrT.HeaderText = "T^2,с^2";
             this.sqrT.MinimumWidth = 6;
             this.sqrT.Name = "sqrT";
-            this.sqrT.ReadOnly = true;
             this.sqrT.Width = 72;
             // 
             // g
@@ -242,19 +223,17 @@ namespace Virt_lab_25
             // 
             // check_Results
             // 
-            this.check_Results.Location = new System.Drawing.Point(12, 12);
-            this.check_Results.Name = "check_Results";
-            this.check_Results.Size = new System.Drawing.Size(158, 40);
-            this.check_Results.TabIndex = 16;
-            this.check_Results.Text = "Проверка результатов";
-            this.check_Results.UseVisualStyleBackColor = true;
-            this.check_Results.Click += new System.EventHandler(this.check_Results_Click);
+            this.results.Location = new System.Drawing.Point(791, 327);
+            this.results.Name = "results";
+            this.results.Size = new System.Drawing.Size(201, 40);
+            this.results.TabIndex = 16;
+            this.results.Text = "Проверка результатов";
+            this.results.UseVisualStyleBackColor = true;
             // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
-            this.fileSystemWatcher1.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher1_Changed);
             // 
             // stringlong
             // 
@@ -301,7 +280,7 @@ namespace Virt_lab_25
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1004, 428);
+            this.ClientSize = new System.Drawing.Size(1003, 425);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.stringlong);
             this.Controls.Add(this.check_Results);
@@ -313,11 +292,9 @@ namespace Virt_lab_25
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.closemain);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Лабораторная работа №25";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
@@ -327,8 +304,6 @@ namespace Virt_lab_25
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button closemain;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox3;

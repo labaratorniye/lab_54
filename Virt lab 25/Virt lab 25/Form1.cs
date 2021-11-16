@@ -13,6 +13,7 @@ namespace Virt_lab_25
     //Application.Run(new Register());
     public partial class Form1 : Form
     {
+        public int postionMajatnik = 0;
 
         public Form1()
         {
@@ -111,10 +112,10 @@ namespace Virt_lab_25
         {
             metodichka.Show();
         }
-        Form2 poryadok = new Form2();
+        Form2 taskList = new Form2();
         private void button5_Click(object sender, EventArgs e)
         {
-            poryadok.Show();
+            taskList.Show();
             
         }
         double time = 0;
@@ -135,79 +136,45 @@ namespace Virt_lab_25
             }
             dataGridView1.Rows[number].Cells[6].Value = 9.8;
         }
-        private void DrawCircleAndLine(int a)
-        {
-            System.Drawing.Pen myPen = new System.Drawing.Pen(System.Drawing.Color.Black);
-            System.Drawing.Graphics formGraphics;
-            formGraphics = this.CreateGraphics();
-            //formGraphics.DrawLine(myPen, 750, 25, 750, 100);
-            //formGraphics.DrawEllipse(myPen, 725, 100, 50, 50);
-            if (a == 1)
-            {
-                formGraphics.DrawLine(myPen, 800, 25, 800, 100);
-                formGraphics.DrawEllipse(myPen, 775, 100, 50, 50);
-            }
-            else if (a == 2)
-            {
-                formGraphics.DrawLine(myPen, 800, 25, 725, 50);
-                formGraphics.DrawEllipse(myPen, 675, 25, 50, 50);
-
-            }
-            else if (a == 3)
-            {
-                formGraphics.DrawLine(myPen, 800, 25, 800, 100);
-                formGraphics.DrawEllipse(myPen, 775, 100, 50, 50);
-
-            }
-            else if (a == 4) 
-            {
-                formGraphics.DrawLine(myPen, 800, 25, 875, 50);
-                formGraphics.DrawEllipse(myPen, 875, 25, 50, 50);
-            }
-            myPen.Dispose();
-            formGraphics.Dispose();
-        }
+   
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (polojenie == 0)
+          /*  if (postionMajatnik == 0)
                 DrawCircleAndLine(1);
-                timer1.Stop();
+                timer1.Stop(); */
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if ((polojenie < 5) && (polojenie>1))
+           /* if ((postionMajatnik < 5) && (postionMajatnik>1))
             {
                 //this.Invalidate();
-                DrawCircleAndLine(polojenie);
-                label1.Text = polojenie.ToString();
-                polojenie++;
+                DrawCircleAndLine(postionMajatnik);
+                label1.Text = postionMajatnik.ToString();
+                postionMajatnik++;
             }
-            else if (polojenie != 0)
+            else if (postionMajatnik != 0)
             {
-                polojenie = 1;
+                postionMajatnik = 1;
                 timer2.Stop();
                 timer1.Start();
-            }
+            } */
         }
         
         private void timer3_Tick(object sender, EventArgs e)
         {
-            if ((polojenie < 5) && (polojenie > 1))
+            if ((postionMajatnik < 5) && (postionMajatnik > 1))
                 this.Invalidate();
-            if (polojenie == 1)
+            if (postionMajatnik == 1)
             {
                 this.Invalidate();
-                polojenie = 0;
+                postionMajatnik = 0;
             }
         }
 
