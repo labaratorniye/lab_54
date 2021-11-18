@@ -261,6 +261,7 @@ namespace Virt_lab_25
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 22;
+            this.label1.Visible = false;
             // 
             // pictureBox2
             // 
@@ -291,6 +292,7 @@ namespace Virt_lab_25
             this.label2.Size = new System.Drawing.Size(19, 13);
             this.label2.TabIndex = 21;
             this.label2.Text = "30";
+            this.label2.Visible = false;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form1
