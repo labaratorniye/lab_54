@@ -18,6 +18,7 @@ namespace Virt_lab_25
         public Form1()
         {
             InitializeComponent();
+            pictureBox1.Enabled = false;
         }
         public int polojenie = 0;
         
@@ -155,6 +156,17 @@ namespace Virt_lab_25
             t = T * n;
             t = Math.Round(t, 2);
             textBox1.Text = Convert.ToString(t);
+            if (!pictureBox1.Enabled)
+            {
+                pictureBox1.Enabled = true;
+                timer1.Start();
+            } else
+            {
+                pictureBox1.Enabled = false;
+                timer1.Stop();
+            }
+            
+
         }
 
 
@@ -201,6 +213,47 @@ namespace Virt_lab_25
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        static bool checkNumberText(object number)
+        {
+            if (!double.TryParse(number.ToString(), out _))
+            {
+                return (false);
+            } else
+            {
+                return (true);
+            }
+
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!checkNumberText(dataGridView1[e.ColumnIndex, e.RowIndex].Value))
+            {
+                MessageBox.Show("Некоректные данные(Формат записи дробей: 1,33)");
+                dataGridView1[e.ColumnIndex, e.RowIndex].Value = "";
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            label2.Text = numericUpDown1.Value.ToString();
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
