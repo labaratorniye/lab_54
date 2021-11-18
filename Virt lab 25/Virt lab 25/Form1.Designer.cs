@@ -31,7 +31,7 @@ namespace Virt_lab_25
         {
             this.components = new System.ComponentModel.Container();
             this.closemain = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Button2 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -48,7 +48,6 @@ namespace Virt_lab_25
             this.check_Results = new System.Windows.Forms.Button();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.stringlong = new System.Windows.Forms.TextBox();
-            /*
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
@@ -56,10 +55,6 @@ namespace Virt_lab_25
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            */
-            this.textBox1 = new System.Windows.Forms.TextBox();
-
-            //((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
@@ -77,15 +72,15 @@ namespace Virt_lab_25
             this.closemain.UseVisualStyleBackColor = true;
             this.closemain.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Button2
             // 
-            this.button2.Location = new System.Drawing.Point(791, 373);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 43);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Измерить";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.Button2.Location = new System.Drawing.Point(791, 373);
+            this.Button2.Name = "Button2";
+            this.Button2.Size = new System.Drawing.Size(97, 43);
+            this.Button2.TabIndex = 5;
+            this.Button2.Text = "Измерить";
+            this.Button2.UseVisualStyleBackColor = true;
+            this.Button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // textBox3
             // 
@@ -102,7 +97,7 @@ namespace Virt_lab_25
             // 
             this.button3.Location = new System.Drawing.Point(275, 12);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(179, 40);
+            this.button3.Size = new System.Drawing.Size(161, 40);
             this.button3.TabIndex = 10;
             this.button3.Text = "Методические материалы";
             this.button3.UseVisualStyleBackColor = true;
@@ -136,7 +131,7 @@ namespace Virt_lab_25
             0});
             this.numericUpDown1.Location = new System.Drawing.Point(645, 371);
             this.numericUpDown1.Maximum = new decimal(new int[] {
-            40,
+            50,
             0,
             0,
             0});
@@ -234,11 +229,13 @@ namespace Virt_lab_25
             // 
             // check_Results
             // 
+            this.check_Results.BackColor = System.Drawing.SystemColors.Window;
             this.check_Results.Location = new System.Drawing.Point(791, 322);
             this.check_Results.Name = "check_Results";
             this.check_Results.Size = new System.Drawing.Size(97, 45);
             this.check_Results.TabIndex = 19;
             this.check_Results.Text = "Проверить результаты";
+            this.check_Results.UseVisualStyleBackColor = false;
             this.check_Results.Click += new System.EventHandler(this.check_Results_Click);
             // 
             // fileSystemWatcher1
@@ -257,43 +254,13 @@ namespace Virt_lab_25
             this.stringlong.TabIndex = 17;
             this.stringlong.Text = "Длина нити";
             // 
-            // timer1
-            // 
-            /*
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // timer2
-            // 
-            this.timer2.Enabled = true;
-            this.timer2.Interval = 1500;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // timer3
-            // 
-            this.timer3.Enabled = true;
-            this.timer3.Interval = 1000;
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(456, 327);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Location = new System.Drawing.Point(467, 295);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "0";
-            */
-           //this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(772, 474);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(71, 22);
-            this.textBox1.TabIndex = 19;
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 22;
             // 
             // pictureBox2
             // 
@@ -319,7 +286,7 @@ namespace Virt_lab_25
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(527, 256);
+            this.label2.Location = new System.Drawing.Point(532, 256);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(19, 13);
             this.label2.TabIndex = 21;
@@ -338,9 +305,6 @@ namespace Virt_lab_25
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.ClientSize = new System.Drawing.Size(1339, 527);
-            this.Controls.Add(this.textBox1);
-            //this.Controls.Add(this.label1);
             this.Controls.Add(this.stringlong);
             this.Controls.Add(this.check_Results);
             this.Controls.Add(this.dataGridView1);
@@ -349,7 +313,7 @@ namespace Virt_lab_25
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Button2);
             this.Controls.Add(this.closemain);
             this.Name = "Form1";
             this.Text = "Лабораторная работа №25";
@@ -366,7 +330,7 @@ namespace Virt_lab_25
 
         #endregion
         private System.Windows.Forms.Button closemain;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Button2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -387,18 +351,13 @@ namespace Virt_lab_25
         private System.Windows.Forms.DataGridViewTextBoxColumn T;
         private System.Windows.Forms.DataGridViewTextBoxColumn sqrT;
         private System.Windows.Forms.DataGridViewTextBoxColumn g;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Timer timer3;
-        private System.Windows.Forms.Label label1;
+        //private System.Windows.Forms.Timer timer1;
+        //private System.Windows.Forms.Timer timer2;
+        //private System.Windows.Forms.Timer timer3;
+        //private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
-        //private System.Windows.Forms.Timer timer1;
-       // private System.Windows.Forms.Timer timer2;
-       // private System.Windows.Forms.Timer timer3;
-       // private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

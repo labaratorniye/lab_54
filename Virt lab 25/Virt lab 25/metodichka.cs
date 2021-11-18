@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Virt_lab_25
 {
-    public partial class metodichka : Form
+    public partial class Form3 : Form
     {
-        public metodichka()
+        public Form3()
         {
             InitializeComponent();
         }

@@ -13,15 +13,11 @@ namespace Virt_lab_25
     //Application.Run(new Register());
     public partial class Form1 : Form
     {
-        public int postionMajatnik = 0;
-
         public Form1()
         {
             InitializeComponent();
             pictureBox1.Enabled = false;
-        }
-        public int polojenie = 0;
-        
+        }        
         private void check_Results_Click(object sender, System.EventArgs e)
         {
             // проверка значений в таблице, сначала проверяю 10 измерений или нет, затем что значения T не равны нулю(введены), затем что g == 9.8, если работает то должно выдаваться "всё ок", иначе соответсвующие сообщения
@@ -69,7 +65,7 @@ namespace Virt_lab_25
                         {
                             if (Double.TryParse(dataGridView1.Rows[i].Cells[6].Value.ToString(), out a)) // преобразуем в double 
                             {
-                                if (a == 9.8)
+                                if ((a >= 9.7) && (a <= 9.9))
                                 j++;
                             }
                             else
@@ -86,26 +82,26 @@ namespace Virt_lab_25
                         }
                     }
                 }
-            }
-            if ( j > 9) // если всё преобразовалось то соответсвующее сообщение
-            {
-                MessageBox.Show(
-                "Всё ок",
-                "Сообщение",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information,
-                MessageBoxDefaultButton.Button1,
-                MessageBoxOptions.DefaultDesktopOnly);
-            }
-            else
-            {
-                MessageBox.Show(
-                "Неверные значения g",
-                "Сообщение",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information,
-                MessageBoxDefaultButton.Button1,
-                MessageBoxOptions.DefaultDesktopOnly);
+                if (j == 10) // если всё преобразовалось то соответсвующее сообщение
+                {
+                    MessageBox.Show(
+                    "Всё ок",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.DefaultDesktopOnly);
+                }
+                else if (j < 10)
+                {
+                    MessageBox.Show(
+                    "Неверные значения g",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.DefaultDesktopOnly);
+                }
             }
         }
 
@@ -118,7 +114,7 @@ namespace Virt_lab_25
         {
 
         }
-        metodichka metodichka = new metodichka();
+        Form3 metodichka = new Form3();
         private void button3_Click(object sender, EventArgs e)
         {
             metodichka.Show();
@@ -127,15 +123,28 @@ namespace Virt_lab_25
         private void button5_Click(object sender, EventArgs e)
         {
             taskList.Show();
-            
         }
         double time = 0;
         double period = 1;
         private void button2_Click_1(object sender, EventArgs e)
         {
             int number = dataGridView1.Rows.Add();
+
+            this.Invalidate();
+            double g, l, T, t, n=10;
+            l = Convert.ToDouble(numericUpDown1.Value)/100;
+            Random rand = new Random();
+            g = Convert.ToDouble(9.7+rand.NextDouble()*(9.9-9.7));
+            g = Math.Round(g, 2);
+            T = 2*Math.PI*Math.Sqrt(l / g);
+            T = Math.Round(T, 2);
+            t = T * n;
+            t = Math.Round(t, 2);
+            time = t;
+            period = T;
+            // textBox1.Text = Convert.ToString(t); ?
             dataGridView1.Rows[number].Cells[0].Value = number + 1;  // вписываем номер № действия
-            dataGridView1.Rows[number].Cells[1].Value = numericUpDown1.Value / 100; // вписываем длину нити
+            dataGridView1.Rows[number].Cells[1].Value = l; // вписываем длину нити
             dataGridView1.Rows[number].Cells[2].Value = time; // ввод времени t
             dataGridView1.Rows[number].Cells[3].Value = 10; // кол-во колебаний, всегда 10
             dataGridView1.Rows[number].Cells[4].Value = period; // ввод периода T
@@ -145,76 +154,21 @@ namespace Virt_lab_25
             {
                 dataGridView1.Rows[number].Cells[5].Value = Math.Pow((double)dataGridView1.Rows[number].Cells[4].Value, 2); // ввод квадрата периода (T^2)
             }
-            dataGridView1.Rows[number].Cells[6].Value = 9.8;
-            postionMajatnik = 2;
-            this.Invalidate();
-            double g, l, T, t, n=10;
-            l = Convert.ToDouble(numericUpDown1.Value)/100;
-            Random rand = new Random();
-            g = Convert.ToDouble(9.7+rand.NextDouble()*(9.9-9.7));
-            T = 2*Math.PI*Math.Sqrt(l / g);
-            t = T * n;
-            t = Math.Round(t, 2);
-            textBox1.Text = Convert.ToString(t);
+            dataGridView1.Rows[number].Cells[6].Value = g;
             if (!pictureBox1.Enabled)
             {
                 pictureBox1.Enabled = true;
-                timer1.Start();
+                //timer1.Start(); ?
             } else
             {
                 pictureBox1.Enabled = false;
-                timer1.Stop();
+                //timer1.Stop(); ?
             }
-            
-
         }
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-          /*  if (postionMajatnik == 0)
-                DrawCircleAndLine(1);
-                timer1.Stop(); */
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-           /* if ((postionMajatnik < 5) && (postionMajatnik>1))
-            {
-                //this.Invalidate();
-                DrawCircleAndLine(postionMajatnik);
-                label1.Text = postionMajatnik.ToString();
-                postionMajatnik++;
-            }
-            else if (postionMajatnik != 0)
-            {
-                postionMajatnik = 1;
-                timer2.Stop();
-                timer1.Start();
-            } */
-        }
-        
-        private void timer3_Tick(object sender, EventArgs e)
-        {
-            if ((postionMajatnik < 5) && (postionMajatnik > 1))
-                this.Invalidate();
-            if (postionMajatnik == 1)
-            {
-                this.Invalidate();
-                postionMajatnik = 0;
-            }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         static bool checkNumberText(object number)
         {
             if (!double.TryParse(number.ToString(), out _))
@@ -254,11 +208,6 @@ namespace Virt_lab_25
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             label2.Text = numericUpDown1.Value.ToString();
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

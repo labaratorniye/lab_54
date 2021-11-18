@@ -49,5 +49,10 @@ namespace Virt_lab_25
                 MessageBox.Show("Не заполнены поля");
             }
         }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
