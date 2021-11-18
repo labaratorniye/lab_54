@@ -1,7 +1,7 @@
 ﻿
 namespace Virt_lab_25
 {
-    partial class metodichka
+    partial class Form3
     {
         /// <summary>
         /// Required designer variable.
@@ -42,14 +42,14 @@ namespace Virt_lab_25
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // metodichka
+            // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
-            this.Name = "metodichka";
-            this.Text = "metodichka";
+            this.Name = "Form3";
+            this.Text = "Методические материалы";
             this.ResumeLayout(false);
 
         }
