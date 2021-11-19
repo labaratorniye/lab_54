@@ -19,8 +19,8 @@ namespace Virt_lab_25
 
         private void enterRegister_Click(object sender, EventArgs e)
         {
-           checkTextBox();
-           if ((textBoxName.Text != "") && (textBoxName.Text != null) && (textBoxName.Text != "") && (textBoxName.Text != null))
+           
+           if (checkTextBox())
             {
                 string name = textBoxName.Text + " " + textBoxGroup.Text;
                 this.Hide();
@@ -39,15 +39,18 @@ namespace Virt_lab_25
             Application.Exit();
         }
 
-        private void checkTextBox()
+        private bool checkTextBox()
         {
             if ((textBoxName.Text == "") || (textBoxName.Text == null))
             {
                 MessageBox.Show("Не заполнены поля");
+                return false;
             } else if ((textBoxGroup.Text == "") || (textBoxGroup.Text == null))
             {
                 MessageBox.Show("Не заполнены поля");
+                return false;
             }
+            return true;
         }
 
         private void Register_Load(object sender, EventArgs e)

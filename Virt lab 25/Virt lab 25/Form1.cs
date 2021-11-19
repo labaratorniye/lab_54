@@ -24,13 +24,7 @@ namespace Virt_lab_25
             int j = 0;
             if (dataGridView1.Rows.Count < 10) // проверка на кол-во измерений
             {
-                MessageBox.Show(
-                    "Неверное количество измерений",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);
+                showTextBox("Неверное количество измерений", "Сообщение");
             }
             else
             {
@@ -39,26 +33,15 @@ namespace Virt_lab_25
                     double a = 0;
                     if (dataGridView1.Rows[i].Cells[4].Value == null) // проверка T
                     {
-                    MessageBox.Show(
-                    "ячейки значений T пусты",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);
+                    showTextBox("ячейки значений T пусты", "Сообщение");
                     break;
                     }
                     else
                     {
                         if (dataGridView1.Rows[i].Cells[6].Value == null) // проверка g, сначало что не null
                         {
-                            MessageBox.Show(
-                            "ячейки значений g пусты",
-                            "Сообщение",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information,
-                            MessageBoxDefaultButton.Button1,
-                            MessageBoxOptions.DefaultDesktopOnly);
+
+                            showTextBox("ячейки значений g пусты", "Сообщение");
                             break;
                         }
                         else
@@ -70,13 +53,7 @@ namespace Virt_lab_25
                             }
                             else
                             {
-                                MessageBox.Show(
-                                    "Не удалось преобразовать",
-                                    "Сообщение",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information,
-                                    MessageBoxDefaultButton.Button1,
-                                    MessageBoxOptions.DefaultDesktopOnly);
+                                showTextBox("Не удалось преобразовать", "Сообщение");
                                 break;
                             }
                         }
@@ -84,23 +61,11 @@ namespace Virt_lab_25
                 }
                 if (j == 10) // если всё преобразовалось то соответсвующее сообщение
                 {
-                    MessageBox.Show(
-                    "Всё ок",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);
+                    showTextBox("Всё ок", "Сообщение");
                 }
                 else if (j < 10)
                 {
-                    MessageBox.Show(
-                    "Неверные значения g",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);
+                    showTextBox("Неверные значения g", "Сообщение");
                 }
             }
         }
@@ -188,6 +153,14 @@ namespace Virt_lab_25
                 MessageBox.Show("Некоректные данные(Формат записи дробей: 1,33)");
                 dataGridView1[e.ColumnIndex, e.RowIndex].Value = "";
             }
+        }
+
+
+        private void showTextBox(String message, String description)
+        {
+            MessageBox.Show(
+                   message,
+                   description);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
