@@ -13,6 +13,16 @@ namespace Virt_lab_25
     //Application.Run(new Register());
     public partial class Form1 : Form
     {
+        double a = 5;
+        int na = 80000;
+        double ld = 0.03;
+        double Fi = 60 * Math.PI / 180;
+        double Fi2;
+        double widow = 0, xilard, yuar;
+        Pen PenLin = new Pen(Color.Black, 3);
+        Pen PenEll = new Pen(Color.Blue, 6);
+        Pen PenLin1 = new Pen(Form1.DefaultBackColor, 3);
+        Pen PenEll1 = new Pen(Form1.DefaultBackColor, 6);
         public Form1()
         {
             InitializeComponent();
@@ -122,7 +132,33 @@ namespace Virt_lab_25
             dataGridView1.Rows[number].Cells[6].Value = g;
             if (!pictureBox1.Enabled)
             {
+
+
                 pictureBox1.Enabled = true;
+                double dt = a / n;
+                int x0 = (pictureBox1.Width);
+                int y0 = (pictureBox1.Height);
+                Bitmap bmp = new Bitmap(x0, y0);
+                pictureBox1.Image = bmp;
+                Graphics Ell = Graphics.FromImage(bmp); //Создаёт графический объект для изменения
+                Graphics Lin = Graphics.FromImage(bmp);
+
+                do
+                {
+                    Fi2 = Fi + dt * (widow - dt * 9.8 * Math.Sin(Fi) / l);
+                    widow = (Fi2 - Fi) / dt;
+                    Fi = Fi2;
+                    xilard = (x0 - 40) / 2 * (1 + Math.Sin(Fi2));
+                    yuar = (y0 - 40) * (1 - 0.5 * (1 - Math.Cos(Fi2)));
+                    Ell.DrawEllipse(PenEll, (int)xilard, (int)yuar, 5, 5);
+                    Lin.DrawLine(PenLin, (int)(x0 - 40) / 2, (int)((y0 - 40) / 2), (int)xilard, (int)yuar);
+                    Application.DoEvents();
+                    pictureBox1.Refresh();
+                    Ell.DrawEllipse(PenEll1, (int)xilard, (int)yuar, 5, 5);
+                    Lin.DrawLine(PenLin1, (int)(x0 - 40) / 2, (int)((y0 - 40) / 2), (int)xilard, (int)yuar);
+                }
+
+                while (pictureBox1.Enabled);
                 //timer1.Start(); ?
             } else
             {

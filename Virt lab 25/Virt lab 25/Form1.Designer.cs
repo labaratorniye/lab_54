@@ -276,7 +276,7 @@ namespace Virt_lab_25
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Virt_lab_25.Properties.Resources.маятник;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.Location = new System.Drawing.Point(573, 76);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(287, 206);
