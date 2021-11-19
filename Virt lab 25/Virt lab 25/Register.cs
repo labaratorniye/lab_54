@@ -41,11 +41,11 @@ namespace Virt_lab_25
 
         private bool checkTextBox()
         {
-            if ((textBoxName.Text == "") || (textBoxName.Text == null))
+            if ((textBoxName.Text.Trim() == string.Empty))
             {
                 MessageBox.Show("Не заполнены поля");
                 return false;
-            } else if ((textBoxGroup.Text == "") || (textBoxGroup.Text == null))
+            } else if ((textBoxName.Text.Trim() == string.Empty))
             {
                 MessageBox.Show("Не заполнены поля");
                 return false;
