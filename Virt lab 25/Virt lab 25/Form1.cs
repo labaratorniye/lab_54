@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,20 +14,20 @@ namespace Virt_lab_25
     //Application.Run(new Register());
     public partial class Form1 : Form
     {
-        double a = 5;
-        int na = 80000;
-        double ld = 0.03;
-        double Fi = 60 * Math.PI / 180;
-        double Fi2;
-        double widow = 0, xilard, yuar;
-        Pen PenLin = new Pen(Color.Black, 3);
-        Pen PenEll = new Pen(Color.Blue, 6);
-        Pen PenLin1 = new Pen(Form1.DefaultBackColor, 3);
-        Pen PenEll1 = new Pen(Form1.DefaultBackColor, 6);
+        private bool startButtonClicked = false;
+        
+        
+        
+        
         public Form1()
         {
             InitializeComponent();
             pictureBox1.Enabled = false;
+         
+            // Bob = new Point(Origin.X,(int)Length);
+            
+            timer1.Interval = 10;
+            
         }        
         private void check_Results_Click(object sender, System.EventArgs e)
         {
@@ -101,10 +102,33 @@ namespace Virt_lab_25
         }
         double time = 0;
         double period = 1;
+        
+        
+        
         private void button2_Click_1(object sender, EventArgs e)
         {
-            int number = dataGridView1.Rows.Add();
+            int length = Convert.ToInt32(Math.Round(numericUpDown1.Value, 0));
+            Point Origin = new Point(pictureBox1.Width/ 2,0);
+            float Length = length * 3;
+            Point Bob = new Point(Origin.X,(int)Length);
+            
+            Graphics G = pictureBox1.CreateGraphics();
+            Pen pen;
+            float Angle = (float)Math.PI/2;
+            float AnglularVelocity = -0.01f;
+            float AngularAcceleration = 0.0f;
+            
+            timer1.Interval = 10;
 
+
+
+
+            int number = dataGridView1.Rows.Add();
+            startButtonClicked = true;
+            timer1.Enabled = false;
+            timer1.Start();
+            
+            
             this.Invalidate();
             double g, l, T, t, n=10;
             l = Convert.ToDouble(numericUpDown1.Value)/100;
@@ -117,6 +141,8 @@ namespace Virt_lab_25
             t = Math.Round(t, 2);
             time = t;
             period = T;
+            
+            
             // textBox1.Text = Convert.ToString(t); ?
             dataGridView1.Rows[number].Cells[0].Value = number + 1;  // вписываем номер № действия
             dataGridView1.Rows[number].Cells[1].Value = l; // вписываем длину нити
@@ -130,42 +156,47 @@ namespace Virt_lab_25
                 dataGridView1.Rows[number].Cells[5].Value = Math.Pow((double)dataGridView1.Rows[number].Cells[4].Value, 2); // ввод квадрата периода (T^2)
             }
             dataGridView1.Rows[number].Cells[6].Value = g;
-            if (!pictureBox1.Enabled)
-            {
-
-
-                pictureBox1.Enabled = true;
-                double dt = a / n;
-                int x0 = (pictureBox1.Width);
-                int y0 = (pictureBox1.Height);
-                Bitmap bmp = new Bitmap(x0, y0);
-                pictureBox1.Image = bmp;
-                Graphics Ell = Graphics.FromImage(bmp); //Создаёт графический объект для изменения
-                Graphics Lin = Graphics.FromImage(bmp);
-
+            
+            
+            
+            pen = new Pen(Color.Black, 5);
                 do
                 {
-                    Fi2 = Fi + dt * (widow - dt * 9.8 * Math.Sin(Fi) / l);
-                    widow = (Fi2 - Fi) / dt;
-                    Fi = Fi2;
-                    xilard = (x0 - 40) / 2 * (1 + Math.Sin(Fi2));
-                    yuar = (y0 - 40) * (1 - 0.5 * (1 - Math.Cos(Fi2)));
-                    Ell.DrawEllipse(PenEll, (int)xilard, (int)yuar, 5, 5);
-                    Lin.DrawLine(PenLin, (int)(x0 - 40) / 2, (int)((y0 - 40) / 2), (int)xilard, (int)yuar);
-                    Application.DoEvents();
-                    pictureBox1.Refresh();
-                    Ell.DrawEllipse(PenEll1, (int)xilard, (int)yuar, 5, 5);
-                    Lin.DrawLine(PenLin1, (int)(x0 - 40) / 2, (int)((y0 - 40) / 2), (int)xilard, (int)yuar);
-                }
+                
+                    Bob.X = (int) (Length * Math.Sin(Angle) + Origin.X);
+                    Bob.Y = (int) (Length * Math.Cos(Angle) + Origin.Y);
 
-                while (pictureBox1.Enabled);
-                //timer1.Start(); ?
-            } else
-            {
-                pictureBox1.Enabled = false;
-                //timer1.Stop(); ?
-            }
+                    Angle += AnglularVelocity;
+                    AnglularVelocity += AngularAcceleration;
+
+                    AnglularVelocity *= (float) 0.985;
+                
+                    //  G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
+                    G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
+                    Application.DoEvents();
+                
+                    pictureBox1.Refresh();
+                    Thread.Sleep(10);
+                
+                    AngularAcceleration = (float) (-0.005 * Math.Sin(Angle));
+               
+                    G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
+                    G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
+                
+                
+                } while (timer1.Enabled);
+                
+                AngularAcceleration = 0;
+                Angle = 0;
+                AnglularVelocity = 0;
         }
+        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Interval = 10;
+            
+        }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
