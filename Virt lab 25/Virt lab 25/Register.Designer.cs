@@ -34,7 +34,7 @@ namespace Virt_lab_25
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxGroup = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.Label();
-            this.group = new System.Windows.Forms.Label();
+            this.@group = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // enterRegister
@@ -83,30 +83,30 @@ namespace Virt_lab_25
             // 
             // group
             // 
-            this.group.AutoSize = true;
-            this.group.Location = new System.Drawing.Point(58, 56);
-            this.group.Name = "group";
-            this.group.Size = new System.Drawing.Size(42, 13);
-            this.group.TabIndex = 5;
-            this.group.Text = "Группа";
+            this.@group.AutoSize = true;
+            this.@group.Location = new System.Drawing.Point(58, 56);
+            this.@group.Name = "group";
+            this.@group.Size = new System.Drawing.Size(42, 13);
+            this.@group.TabIndex = 5;
+            this.@group.Text = "Группа";
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(247, 142);
-            this.Controls.Add(this.group);
+            this.Controls.Add(this.@group);
             this.Controls.Add(this.name);
             this.Controls.Add(this.textBoxGroup);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.closeRegister);
             this.Controls.Add(this.enterRegister);
             this.Name = "Register";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Лабораторная работа №25";
             this.Load += new System.EventHandler(this.Register_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
