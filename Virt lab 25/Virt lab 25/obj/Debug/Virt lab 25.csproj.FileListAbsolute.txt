@@ -101,6 +101,9 @@ C:\down\huynya\Virt lab 25\Virt lab 25\obj\Debug\Virt_lab_25.Properties.Resource
 C:\down\huynya\Virt lab 25\Virt lab 25\obj\Debug\Virt_lab_25.Register.resources
 C:\down\huynya\Virt lab 25\Virt lab 25\obj\Debug\Virt lab 25.csproj.GenerateResource.cache
 C:\down\huynya\Virt lab 25\Virt lab 25\obj\Debug\Virt lab 25.csproj.CoreCompileInputs.cache
+C:\down\lab25\Virt lab 25\Virt lab 25\bin\Debug\Virt lab 25.exe.config
+C:\down\lab25\Virt lab 25\Virt lab 25\bin\Debug\Virt lab 25.exe
+C:\down\lab25\Virt lab 25\Virt lab 25\bin\Debug\Virt lab 25.pdb
 C:\down\lab25\Virt lab 25\Virt lab 25\obj\Debug\Virt lab 25.csprojAssemblyReference.cache
 C:\down\lab25\Virt lab 25\Virt lab 25\obj\Debug\Virt_lab_25.Form1.resources
 C:\down\lab25\Virt lab 25\Virt lab 25\obj\Debug\Virt_lab_25.Form2.resources
@@ -111,6 +114,3 @@ C:\down\lab25\Virt lab 25\Virt lab 25\obj\Debug\Virt lab 25.csproj.GenerateResou
 C:\down\lab25\Virt lab 25\Virt lab 25\obj\Debug\Virt lab 25.csproj.CoreCompileInputs.cache
 C:\down\lab25\Virt lab 25\Virt lab 25\obj\Debug\Virt lab 25.exe
 C:\down\lab25\Virt lab 25\Virt lab 25\obj\Debug\Virt lab 25.pdb
-C:\down\lab25\Virt lab 25\Virt lab 25\bin\Debug\Virt lab 25.exe.config
-C:\down\lab25\Virt lab 25\Virt lab 25\bin\Debug\Virt lab 25.exe
-C:\down\lab25\Virt lab 25\Virt lab 25\bin\Debug\Virt lab 25.pdb
