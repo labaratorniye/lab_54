@@ -158,7 +158,7 @@ namespace Virt_lab_25
             dataGridView1.Rows[number].Cells[6].Value = g;
             
             
-            
+            Brush brush = Brushes.Black;
             pen = new Pen(Color.Black, 5);
                 do
                 {
@@ -172,16 +172,18 @@ namespace Virt_lab_25
                     AnglularVelocity *= (float) 0.985;
                 
                     //  G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
-                    G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
+                    G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
+                   // G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
+                    G.FillEllipse(brush, Bob.X - 17, Bob.Y - 7, 34, 34);
                     Application.DoEvents();
                 
+                    
+                    Thread.Sleep(14);
                     pictureBox1.Refresh();
-                    Thread.Sleep(10);
-                
                     AngularAcceleration = (float) (-0.005 * Math.Sin(Angle));
-               
-                    G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
-                    G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
+                    G.FillEllipse(brush, Bob.X - 17, Bob.Y - 7, 34, 34);
+                   // G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
+             //      G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
                 
                 
                 } while (timer1.Enabled);

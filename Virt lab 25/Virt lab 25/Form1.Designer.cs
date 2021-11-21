@@ -255,10 +255,10 @@ namespace Virt_lab_25
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox1.Location = new System.Drawing.Point(573, 76);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(265, 206);
+            this.pictureBox1.Size = new System.Drawing.Size(419, 242);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -301,6 +301,7 @@ namespace Virt_lab_25
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.Button2);
             this.Controls.Add(this.closemain);
+            this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Лабораторная работа №25";
             this.Load += new System.EventHandler(this.Form1_Load);
