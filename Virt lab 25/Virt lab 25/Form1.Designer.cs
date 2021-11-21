@@ -303,6 +303,7 @@ namespace Virt_lab_25
             this.Controls.Add(this.closemain);
             this.DoubleBuffered = true;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Лабораторная работа №25";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).EndInit();
@@ -324,7 +325,6 @@ namespace Virt_lab_25
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button check_Results;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
@@ -347,6 +347,7 @@ namespace Virt_lab_25
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 

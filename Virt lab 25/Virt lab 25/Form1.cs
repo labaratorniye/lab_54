@@ -246,7 +246,6 @@ namespace Virt_lab_25
         {
 
         }
-
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             label2.Text = numericUpDown1.Value.ToString();
