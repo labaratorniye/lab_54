@@ -15,15 +15,20 @@ namespace Virt_lab_25
         public Form2()
         {
             InitializeComponent();
+            button1.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            label1.Text = "Порядок выполнения работы \n 1. \n 2. \n 3. \n";
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            pictureBox1.Image = Image.FromFile("TaskList4.png");
+            pictureBox1.Parent = panel1;
+            pictureBox2.Image = Image.FromFile("TaskList3.png");
+            pictureBox2.Parent = panel1;
+            pictureBox3.Image = Image.FromFile("TaskList2.png");
+            pictureBox3.Parent = panel1;
+            pictureBox4.Image = Image.FromFile("TaskList1.png");
+            pictureBox4.Parent = panel1;
+            panel1.AutoScroll = true;
         }
         //Form2 close = new Form2();
 
