@@ -16,16 +16,7 @@ namespace Virt_lab_25
         public Form1()
         {
             InitializeComponent();
-
             pictureBox1.Enabled = false;
-            if (true)
-            {
-                numericUpDown1.Value = 34;
-            }
-            else
-            {
-                numericUpDown1.Value = 44;
-            }
         }        
         private void check_Results_Click(object sender, System.EventArgs e)
         {
