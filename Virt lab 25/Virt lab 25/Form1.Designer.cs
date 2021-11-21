@@ -314,7 +314,6 @@ namespace Virt_lab_25
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button check_Results;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
@@ -337,6 +336,7 @@ namespace Virt_lab_25
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 
