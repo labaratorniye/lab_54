@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,10 +14,20 @@ namespace Virt_lab_25
     //Application.Run(new Register());
     public partial class Form1 : Form
     {
+        private bool startButtonClicked = false;
+        
+        
+        
+        
         public Form1()
         {
             InitializeComponent();
             pictureBox1.Enabled = false;
+         
+            // Bob = new Point(Origin.X,(int)Length);
+            
+            timer1.Interval = 10;
+            
         }        
         private void check_Results_Click(object sender, System.EventArgs e)
         {
@@ -91,10 +102,33 @@ namespace Virt_lab_25
         }
         double time = 0;
         double period = 1;
+        
+        
+        
         private void button2_Click_1(object sender, EventArgs e)
         {
-            int number = dataGridView1.Rows.Add();
+            int length = Convert.ToInt32(Math.Round(numericUpDown1.Value, 0));
+            Point Origin = new Point(pictureBox1.Width/ 2,0);
+            float Length = length * 3;
+            Point Bob = new Point(Origin.X,(int)Length);
+            
+            Graphics G = pictureBox1.CreateGraphics();
+            Pen pen;
+            float Angle = (float)Math.PI/2;
+            float AnglularVelocity = -0.01f;
+            float AngularAcceleration = 0.0f;
+            
+            timer1.Interval = 10;
 
+
+
+
+            int number = dataGridView1.Rows.Add();
+            startButtonClicked = true;
+            timer1.Enabled = false;
+            timer1.Start();
+            
+            
             this.Invalidate();
             double g, l, T, t, n=10;
             l = Convert.ToDouble(numericUpDown1.Value)/100;
@@ -107,6 +141,8 @@ namespace Virt_lab_25
             t = Math.Round(t, 2);
             time = t;
             period = T;
+            
+            
             // textBox1.Text = Convert.ToString(t); ?
             dataGridView1.Rows[number].Cells[0].Value = number + 1;  // вписываем номер № действия
             dataGridView1.Rows[number].Cells[1].Value = l; // вписываем длину нити
@@ -120,16 +156,49 @@ namespace Virt_lab_25
                 dataGridView1.Rows[number].Cells[5].Value = Math.Pow((double)dataGridView1.Rows[number].Cells[4].Value, 2); // ввод квадрата периода (T^2)
             }
             dataGridView1.Rows[number].Cells[6].Value = g;
-            if (!pictureBox1.Enabled)
-            {
-                pictureBox1.Enabled = true;
-                //timer1.Start(); ?
-            } else
-            {
-                pictureBox1.Enabled = false;
-                //timer1.Stop(); ?
-            }
+            
+            
+            Brush brush = Brushes.Black;
+            pen = new Pen(Color.Black, 5);
+                do
+                {
+                
+                    Bob.X = (int) (Length * Math.Sin(Angle) + Origin.X);
+                    Bob.Y = (int) (Length * Math.Cos(Angle) + Origin.Y);
+
+                    Angle += AnglularVelocity;
+                    AnglularVelocity += AngularAcceleration;
+
+                    AnglularVelocity *= (float) 0.985;
+                
+                    //  G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
+                    G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
+                   // G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
+                    G.FillEllipse(brush, Bob.X - 17, Bob.Y - 7, 34, 34);
+                    Application.DoEvents();
+                
+                    
+                    Thread.Sleep(14);
+                    pictureBox1.Refresh();
+                    AngularAcceleration = (float) (-0.005 * Math.Sin(Angle));
+                    G.FillEllipse(brush, Bob.X - 17, Bob.Y - 7, 34, 34);
+                   // G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
+             //      G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
+                
+                
+                } while (timer1.Enabled);
+                
+                AngularAcceleration = 0;
+                Angle = 0;
+                AnglularVelocity = 0;
         }
+        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Interval = 10;
+            
+        }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 

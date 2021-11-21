@@ -55,11 +55,13 @@ namespace Virt_lab_25
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.timer4 = new System.Timers.Timer();
             ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.timer4)).BeginInit();
             this.SuspendLayout();
             // 
             // closemain
@@ -253,10 +255,10 @@ namespace Virt_lab_25
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Virt_lab_25.Properties.Resources.маятник;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox1.Location = new System.Drawing.Point(573, 76);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(287, 206);
+            this.pictureBox1.Size = new System.Drawing.Size(419, 242);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -271,6 +273,11 @@ namespace Virt_lab_25
             this.label2.Text = "30";
             this.label2.Visible = false;
             this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // timer4
+            // 
+            this.timer4.Enabled = true;
+            this.timer4.SynchronizingObject = this;
             // 
             // Form1
             // 
@@ -294,6 +301,7 @@ namespace Virt_lab_25
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.Button2);
             this.Controls.Add(this.closemain);
+            this.DoubleBuffered = true;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Лабораторная работа №25";
@@ -303,9 +311,12 @@ namespace Virt_lab_25
             ((System.ComponentModel.ISupportInitialize) (this.fileSystemWatcher1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.timer4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Timers.Timer timer4;
 
         #endregion
         private System.Windows.Forms.Button closemain;
