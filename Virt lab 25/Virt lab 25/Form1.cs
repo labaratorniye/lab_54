@@ -121,7 +121,7 @@ namespace Virt_lab_25
 
                 Graphics G = pictureBox1.CreateGraphics();
                 Pen pen;
-                float Angle = (float)Math.PI / 2;
+                float Angle = (float)Math.PI / 13;
                 float AnglularVelocity = -0.01f;
                 float AngularAcceleration = 0.0f;
 
@@ -167,8 +167,8 @@ namespace Virt_lab_25
 
                 dataGridView1.Rows[number].Cells[5].Value = g; // ввод g
 
-                Brush brush = Brushes.Black;
-                pen = new Pen(Color.Black, 5);
+                Brush brush = Brushes.Red;
+                pen = new Pen(Color.Black, 2);
                 do
                 {
 
@@ -178,19 +178,19 @@ namespace Virt_lab_25
                     Angle += AnglularVelocity;
                     AnglularVelocity += AngularAcceleration;
 
-                    AnglularVelocity *= (float)0.985;
+                    AnglularVelocity *= (float)0.99;
 
                     //  G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
                     G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
                     // G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
-                    G.FillEllipse(brush, Bob.X - 17, Bob.Y - 7, 34, 34);
+                    G.FillEllipse(brush, Bob.X - 8, Bob.Y - 2, 17, 17);
                     Application.DoEvents();
 
 
                     Thread.Sleep(14);
                     pictureBox1.Refresh();
                     AngularAcceleration = (float)(-0.005 * Math.Sin(Angle));
-                    G.FillEllipse(brush, Bob.X - 17, Bob.Y - 7, 34, 34);
+                    G.FillEllipse(brush, Bob.X - 8, Bob.Y - 2, 17, 17);
                     // G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
                     //      G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
 
