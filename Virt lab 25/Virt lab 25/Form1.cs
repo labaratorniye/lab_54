@@ -15,17 +15,18 @@ namespace Virt_lab_25
     public partial class Form1 : Form
     {
         private bool startButtonClicked = false;
-
+        public string name = "123123";
 
 
 
         public Form1()
         {
+            
             InitializeComponent();
             pictureBox1.Enabled = false;
 
             // Bob = new Point(Origin.X,(int)Length);
-
+            label4.Text = name;
             timer1.Interval = 10;
 
 
@@ -34,6 +35,7 @@ namespace Virt_lab_25
         double Atime = 0; // время 10 колебаний 
         private void check_Results_Click(object sender, System.EventArgs e)
         {
+            
             // проверка значений в таблице, сначала проверяю 10 измерений или нет, затем что значения T не равны нулю(введены), затем что g == 9.8, если работает то должно выдаваться "всё ок", иначе соответсвующие сообщения
             int j = 0;
             if (dataGridView1.Rows.Count < 6) // проверка на кол-во измерений
@@ -268,5 +270,11 @@ namespace Virt_lab_25
         }
 
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Protocol protocol = new Protocol();
+            protocol.fullName = name;
+            protocol.Show();
+        }
     }
 }
