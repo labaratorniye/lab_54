@@ -24,6 +24,7 @@ namespace Virt_lab_25
                 string name = textBoxName.Text + " " + textBoxGroup.Text;
                 this.Hide();
                 Form1 form = new Form1();
+                form.name = name;
                 if (radioButton1.Checked == true)
                 {
                     form.numericUpDown1.Value = 30;
