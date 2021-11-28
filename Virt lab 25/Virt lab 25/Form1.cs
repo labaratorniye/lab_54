@@ -104,69 +104,64 @@ namespace Virt_lab_25
             taskList.Show();
         }
         double time = 0;
-        double period = 1;
-
-        double uoi =0; // переменная на +2 см в рассчеты 
 
         private void button2_Click_1(object sender, EventArgs e)
         {
 
             if (quantity <= 5) // проверка на количество измерений 
             {
-                quantity++;
                 int length = Convert.ToInt32(Math.Round(numericUpDown1.Value, 0));
                 Point Origin = new Point(pictureBox1.Width / 2, 0);
                 float Length = length * 3;
                 Point Bob = new Point(Origin.X, (int)Length);
-
                 Graphics G = pictureBox1.CreateGraphics();
                 Pen pen;
                 float Angle = (float)Math.PI / 13;
                 float AnglularVelocity = -0.01f;
                 float AngularAcceleration = 0.0f;
-
                 timer1.Interval = 10;
-
-
-
-                int number = dataGridView1.Rows.Add();
-
                 startButtonClicked = true;
                 timer1.Enabled = false;
                 timer1.Start();
-
-
                 this.Invalidate();
                 double g, l, T, t, n = 10;
-                l = Convert.ToDouble(numericUpDown1.Value) / 100 + uoi;
-                uoi = uoi + 0.02;
-                g = 9.8;
-                g = Math.Round(g, 2);
-                T = 2 * Math.PI * Math.Sqrt(l / g);
-                T = Math.Round(T, 2);
-                t = T * n;
-                t = Math.Round(t, 2);
-                time = t;
-                period = T;
-                Atime = Atime + time;
+                l = Convert.ToDouble(numericUpDown1.Value) / 100;
+                bool check = false;
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    if ( l == Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value))
+                    {
+                        showTextBox("Вы уже провели измерение с данной длиной", "Сообщение");
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    quantity++;
+                    int number = dataGridView1.Rows.Add();
+                    dataGridView1.Rows[number].Cells[1].Value = l;
+                    g = 9.8;
+                    g = Math.Round(g, 2);
+                    T = 2 * Math.PI * Math.Sqrt(l / g);
+                    T = Math.Round(T, 2);
+                    t = T * n;
+                    t = Math.Round(t, 2);
+                    time = t;
+                    Atime = Atime + time;
 
-                // textBox1.Text = Convert.ToString(t); ?
-                dataGridView1.Rows[number].Cells[0].Value = number + 1;  // вписываем номер № действия
-                dataGridView1.Rows[number].Cells[0].ReadOnly = true; // Блокировка ввода номера опыта
+                    // textBox1.Text = Convert.ToString(t); ?
+                    dataGridView1.Rows[number].Cells[0].Value = number + 1;  // вписываем номер № действия
+                    dataGridView1.Rows[number].Cells[0].ReadOnly = true; // Блокировка ввода номера опыта
 
-                dataGridView1.Rows[number].Cells[1].Value = l; // вписываем длину нити
-                dataGridView1.Rows[number].Cells[1].ReadOnly = true; // Блокировка ввода длины нити 
+                    //dataGridView1.Rows[number].Cells[1].Value = l; // вписываем длину нити
+                    dataGridView1.Rows[number].Cells[1].ReadOnly = true; // Блокировка ввода длины нити 
 
-                dataGridView1.Rows[number].Cells[2].Value = time; // ввод времени t
-                dataGridView1.Rows[number].Cells[2].ReadOnly = true; // Блокировка ввода времени t
+                    dataGridView1.Rows[number].Cells[2].Value = time; // ввод времени t
+                    dataGridView1.Rows[number].Cells[2].ReadOnly = true; // Блокировка ввода времени t
 
-                dataGridView1.Rows[number].Cells[3].Value = 10; // кол-во колебаний, всегда 10
-                dataGridView1.Rows[number].Cells[3].ReadOnly = true; // Блокировка ввода количества колебаний
-
-                dataGridView1.Rows[number].Cells[4].Value = period; // ввод периода T
-
-                dataGridView1.Rows[number].Cells[5].Value = g; // ввод g
-
+                    dataGridView1.Rows[number].Cells[3].Value = 10; // кол-во колебаний, всегда 10
+                    dataGridView1.Rows[number].Cells[3].ReadOnly = true; // Блокировка ввода количества колебаний
+                }
                 Brush brush = Brushes.Red;
                 pen = new Pen(Color.Black, 2);
                 do
