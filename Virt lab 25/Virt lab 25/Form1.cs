@@ -189,7 +189,7 @@ namespace Virt_lab_25
 
                     Thread.Sleep(14);
                     pictureBox1.Refresh();
-                    AngularAcceleration = (float)(-0.005 * Math.Sin(Angle));
+                    AngularAcceleration = (float)(-0.01 * Math.Sin(Angle));
                     G.FillEllipse(brush, Bob.X - 8, Bob.Y - 2, 17, 17);
                     // G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
                     //      G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
