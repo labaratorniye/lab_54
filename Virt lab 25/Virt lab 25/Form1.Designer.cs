@@ -36,18 +36,14 @@ namespace Virt_lab_25
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.l = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.n = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.T = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.g = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.check_Results = new System.Windows.Forms.Button();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Timers.Timer();
+            this.nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.l = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.timer4)).BeginInit();
@@ -107,60 +103,13 @@ namespace Virt_lab_25
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.nomer, this.l, this.Column1, this.n, this.T, this.g});
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.nomer, this.l});
             this.dataGridView1.Location = new System.Drawing.Point(12, 58);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 10;
-            this.dataGridView1.Size = new System.Drawing.Size(312, 260);
+            this.dataGridView1.Size = new System.Drawing.Size(295, 259);
             this.dataGridView1.TabIndex = 15;
-            // 
-            // nomer
-            // 
-            this.nomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.nomer.HeaderText = "№";
-            this.nomer.MinimumWidth = 6;
-            this.nomer.Name = "nomer";
-            this.nomer.Width = 43;
-            // 
-            // l
-            // 
-            this.l.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.l.HeaderText = "l,м";
-            this.l.MinimumWidth = 6;
-            this.l.Name = "l";
-            this.l.Width = 45;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "t, c";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 63;
-            // 
-            // n
-            // 
-            this.n.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.n.HeaderText = "n";
-            this.n.MinimumWidth = 6;
-            this.n.Name = "n";
-            this.n.Width = 38;
-            // 
-            // T
-            // 
-            this.T.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.T.HeaderText = "T,с";
-            this.T.MinimumWidth = 6;
-            this.T.Name = "T";
-            this.T.Width = 48;
-            // 
-            // g
-            // 
-            this.g.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.g.HeaderText = "g,м*с^-2";
-            this.g.MinimumWidth = 6;
-            this.g.Name = "g";
-            this.g.Width = 74;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // check_Results
             // 
@@ -182,6 +131,22 @@ namespace Virt_lab_25
             this.timer4.Enabled = true;
             this.timer4.SynchronizingObject = this;
             // 
+            // nomer
+            // 
+            this.nomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.nomer.HeaderText = "I - ток в электромагинте, А";
+            this.nomer.MinimumWidth = 6;
+            this.nomer.Name = "nomer";
+            this.nomer.Width = 154;
+            // 
+            // l
+            // 
+            this.l.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.l.HeaderText = "Δφi - э.д.с. в датчике Холла, В";
+            this.l.MinimumWidth = 6;
+            this.l.Name = "l";
+            this.l.Width = 128;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,7 +165,7 @@ namespace Virt_lab_25
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Лабораторная работа №25";
+            this.Text = "Лабораторная работа №54";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.fileSystemWatcher1)).EndInit();
@@ -229,10 +194,6 @@ namespace Virt_lab_25
         //private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn l;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn n;
-        private System.Windows.Forms.DataGridViewTextBoxColumn T;
-        private System.Windows.Forms.DataGridViewTextBoxColumn g;
     }
 }
 

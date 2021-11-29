@@ -39,7 +39,7 @@ namespace Virt_lab_25
             // 
             // enterRegister
             // 
-            this.enterRegister.Location = new System.Drawing.Point(36, 149);
+            this.enterRegister.Location = new System.Drawing.Point(36, 129);
             this.enterRegister.Name = "enterRegister";
             this.enterRegister.Size = new System.Drawing.Size(75, 23);
             this.enterRegister.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace Virt_lab_25
             // 
             // closeRegister
             // 
-            this.closeRegister.Location = new System.Drawing.Point(131, 149);
+            this.closeRegister.Location = new System.Drawing.Point(131, 129);
             this.closeRegister.Name = "closeRegister";
             this.closeRegister.Size = new System.Drawing.Size(75, 23);
             this.closeRegister.TabIndex = 1;
@@ -89,12 +89,12 @@ namespace Virt_lab_25
             this.@group.Size = new System.Drawing.Size(42, 13);
             this.@group.TabIndex = 5;
             this.@group.Text = "Группа";
-             
+            // 
             // Register
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(247, 184);
+            this.ClientSize = new System.Drawing.Size(247, 165);
             this.Controls.Add(this.@group);
             this.Controls.Add(this.name);
             this.Controls.Add(this.textBoxGroup);
