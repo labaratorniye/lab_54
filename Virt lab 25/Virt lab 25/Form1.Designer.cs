@@ -32,11 +32,9 @@ namespace Virt_lab_25
             this.components = new System.ComponentModel.Container();
             this.closemain = new System.Windows.Forms.Button();
             this.Button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.l = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,27 +44,13 @@ namespace Virt_lab_25
             this.g = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.check_Results = new System.Windows.Forms.Button();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.stringlong = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.timer4 = new System.Timers.Timer();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.timer4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // closemain
@@ -87,18 +71,6 @@ namespace Virt_lab_25
             this.Button2.TabIndex = 5;
             this.Button2.Text = "Измерить";
             this.Button2.UseVisualStyleBackColor = true;
-            this.Button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(710, 373);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(29, 13);
-            this.textBox3.TabIndex = 9;
-            this.textBox3.Text = "см";
             // 
             // button3
             // 
@@ -130,19 +102,6 @@ namespace Virt_lab_25
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Increment = new decimal(new int[] {2, 0, 0, 0});
-            this.numericUpDown1.Location = new System.Drawing.Point(645, 371);
-            this.numericUpDown1.Maximum = new decimal(new int[] {50, 0, 0, 0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {30, 0, 0, 0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.ReadOnly = true;
-            this.numericUpDown1.Size = new System.Drawing.Size(59, 20);
-            this.numericUpDown1.TabIndex = 14;
-            this.numericUpDown1.Value = new decimal(new int[] {30, 0, 0, 0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -154,8 +113,6 @@ namespace Virt_lab_25
             this.dataGridView1.RowHeadersWidth = 10;
             this.dataGridView1.Size = new System.Drawing.Size(312, 260);
             this.dataGridView1.TabIndex = 15;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
             // nomer
             // 
@@ -208,111 +165,22 @@ namespace Virt_lab_25
             // check_Results
             // 
             this.check_Results.BackColor = System.Drawing.SystemColors.Window;
-            this.check_Results.Location = new System.Drawing.Point(791, 322);
+            this.check_Results.Location = new System.Drawing.Point(894, 322);
             this.check_Results.Name = "check_Results";
             this.check_Results.Size = new System.Drawing.Size(97, 45);
             this.check_Results.TabIndex = 19;
             this.check_Results.Text = "Проверить результаты";
             this.check_Results.UseVisualStyleBackColor = false;
-            this.check_Results.Click += new System.EventHandler(this.check_Results_Click);
             // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // stringlong
-            // 
-            this.stringlong.BackColor = System.Drawing.Color.White;
-            this.stringlong.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.stringlong.Location = new System.Drawing.Point(645, 392);
-            this.stringlong.Name = "stringlong";
-            this.stringlong.ReadOnly = true;
-            this.stringlong.Size = new System.Drawing.Size(93, 13);
-            this.stringlong.TabIndex = 17;
-            this.stringlong.Text = "Длина нити";
-            // 
-            // label1
-            // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(416, 295);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 22;
-            this.label1.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(532, 256);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(19, 13);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "30";
-            this.label2.Visible = false;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // timer4
             // 
             this.timer4.Enabled = true;
             this.timer4.SynchronizingObject = this;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Virt_lab_25.Properties.Resources.T;
-            this.pictureBox4.Location = new System.Drawing.Point(16, 355);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox4.TabIndex = 24;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Virt_lab_25.Properties.Resources.g;
-            this.pictureBox3.Location = new System.Drawing.Point(122, 355);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox3.TabIndex = 23;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Virt_lab_25.Properties.Resources.Screenshot_2;
-            this.pictureBox2.Location = new System.Drawing.Point(416, 93);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 158);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 20;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.pictureBox1.Location = new System.Drawing.Point(548, 76);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(419, 242);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label3.Location = new System.Drawing.Point(12, 325);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(193, 20);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Формулы для рассчета:";
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(317, 378);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 26);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "label4";
             // 
             // Form1
             // 
@@ -322,22 +190,11 @@ namespace Virt_lab_25
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1003, 425);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.stringlong);
             this.Controls.Add(this.check_Results);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.Button2);
             this.Controls.Add(this.closemain);
             this.DoubleBuffered = true;
@@ -345,54 +202,37 @@ namespace Virt_lab_25
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Лабораторная работа №25";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.fileSystemWatcher1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.timer4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
         }
-
-        private System.Windows.Forms.Label label4;
 
         private System.Timers.Timer timer4;
 
         #endregion
         private System.Windows.Forms.Button closemain;
         private System.Windows.Forms.Button Button2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button check_Results;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
-        private System.Windows.Forms.TextBox stringlong;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
-        private System.Windows.Forms.Label label1;
+
         //private System.Windows.Forms.Timer timer1;
         //private System.Windows.Forms.Timer timer2;
         //private System.Windows.Forms.Timer timer3;
         //private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn l;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn n;
         private System.Windows.Forms.DataGridViewTextBoxColumn T;
         private System.Windows.Forms.DataGridViewTextBoxColumn g;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label3;
     }
 }
 

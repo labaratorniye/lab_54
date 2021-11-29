@@ -25,18 +25,6 @@ namespace Virt_lab_25
                 this.Hide();
                 Form1 form = new Form1();
                 form.name = name;
-                if (radioButton1.Checked == true)
-                {
-                    form.numericUpDown1.Value = 30;
-                    form.numericUpDown1.Minimum = 30;
-                    form.numericUpDown1.Maximum = 40;
-                }
-                else
-                {
-                    form.numericUpDown1.Value = 40;
-                    form.numericUpDown1.Minimum = 40;
-                    form.numericUpDown1.Maximum = 50;
-                }
                 form.Show();
             }
         }
@@ -66,16 +54,6 @@ namespace Virt_lab_25
         }
 
         private void Register_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
         }
