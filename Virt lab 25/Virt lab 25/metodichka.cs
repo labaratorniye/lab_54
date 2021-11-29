@@ -22,12 +22,6 @@ namespace Virt_lab_25
             pictureBox2.Parent = panel1;
             pictureBox3.Image = Image.FromFile("Metod3.png");
             pictureBox3.Parent = panel1;
-            pictureBox4.Image = Image.FromFile("Metod4.png");
-            pictureBox4.Parent = panel1;
-            pictureBox5.Image = Image.FromFile("Metod5.png");
-            pictureBox5.Parent = panel1;
-            pictureBox6.Image = Image.FromFile("Metod6.png");
-            pictureBox6.Parent = panel1;
             panel1.AutoScroll = true;
         }
 

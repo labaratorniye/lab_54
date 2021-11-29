@@ -47,10 +47,5 @@ namespace Virt_lab_25
             protocol.fullName = name;
             protocol.Show();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

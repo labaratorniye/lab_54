@@ -70,9 +70,9 @@ namespace Virt_lab_25
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(224, 12);
+            this.button3.Location = new System.Drawing.Point(216, 12);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 40);
+            this.button3.Size = new System.Drawing.Size(91, 40);
             this.button3.TabIndex = 10;
             this.button3.Text = "Методические материалы";
             this.button3.UseVisualStyleBackColor = true;
@@ -80,9 +80,9 @@ namespace Virt_lab_25
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(118, 12);
+            this.button4.Location = new System.Drawing.Point(120, 12);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 40);
+            this.button4.Size = new System.Drawing.Size(90, 40);
             this.button4.TabIndex = 11;
             this.button4.Text = "Протокол";
             this.button4.UseVisualStyleBackColor = true;
@@ -92,7 +92,7 @@ namespace Virt_lab_25
             // 
             this.button5.Location = new System.Drawing.Point(12, 12);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 40);
+            this.button5.Size = new System.Drawing.Size(102, 40);
             this.button5.TabIndex = 12;
             this.button5.Text = "Порядок выполнения работы";
             this.button5.UseVisualStyleBackColor = true;
@@ -109,7 +109,6 @@ namespace Virt_lab_25
             this.dataGridView1.RowHeadersWidth = 10;
             this.dataGridView1.Size = new System.Drawing.Size(295, 259);
             this.dataGridView1.TabIndex = 15;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // check_Results
             // 
@@ -134,10 +133,10 @@ namespace Virt_lab_25
             // nomer
             // 
             this.nomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.nomer.HeaderText = "I - ток в электромагинте, А";
+            this.nomer.HeaderText = "Iсi  - ток в электромагинте, А";
             this.nomer.MinimumWidth = 6;
             this.nomer.Name = "nomer";
-            this.nomer.Width = 154;
+            this.nomer.Width = 164;
             // 
             // l
             // 
@@ -154,7 +153,7 @@ namespace Virt_lab_25
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1003, 425);
+            this.ClientSize = new System.Drawing.Size(1000, 425);
             this.Controls.Add(this.check_Results);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button5);
