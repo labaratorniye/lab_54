@@ -14,6 +14,7 @@ namespace Virt_lab_25
     public partial class Form1 : Form
     {
         public string name = "123123";
+        
         public Form1()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace Virt_lab_25
 
         private void Form1_Load(object sender, EventArgs e)
         {
-        
+            
         }
         
         private void button4_Click(object sender, EventArgs e)
