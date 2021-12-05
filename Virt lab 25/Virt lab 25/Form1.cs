@@ -29,6 +29,50 @@ namespace Virt_lab_25
 
         Form2 taskList = new Form2();
 
+
+        private double AMathematicalOperation()
+        {
+            double a = 0;
+            double algebraicSumOfIideltaFii = 0;
+            double algebraicIi = 0;
+            double algebraicIiInSquare = 0;
+            double algebraicdeltaFii = 0;
+            for (int i = 0; i < numberofoperations; i++)
+            {
+                algebraicSumOfIideltaFii += Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value);
+
+                algebraicIi += Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value);
+
+                algebraicdeltaFii += Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value);
+
+                algebraicIiInSquare += Math.Pow(Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value),2);
+            }
+            a = (algebraicSumOfIideltaFii * numberofoperations - (algebraicSumOfIideltaFii * algebraicIi)) / (algebraicIiInSquare * numberofoperations - Math.Pow(algebraicIi,2));
+            a = Math.Round(a, 3);
+            return a;
+        }
+        private double BMathematicalOperation()
+        {
+            double b = 0;
+            double algebraicSumOfIideltaFii = 0;
+            double algebraicIi = 0;
+            double algebraicIiInSquare = 0;
+            double algebraicdeltaFii = 0;
+            for (int i = 0; i < numberofoperations; i++)
+            {
+                algebraicSumOfIideltaFii += Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value);
+
+                algebraicIi += Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value);
+
+                algebraicdeltaFii += Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value);
+
+                algebraicIiInSquare += Math.Pow(Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value), 2);
+            }
+            b = ((algebraicIiInSquare * algebraicdeltaFii) - (algebraicSumOfIideltaFii * algebraicIi)) / ((Math.Pow(algebraicIi, 2) * numberofoperations) - algebraicIi);
+            b = Math.Round(b, 3);
+            return b;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             
@@ -67,7 +111,6 @@ namespace Virt_lab_25
             PerformEDS();
 
         }
-        int quantity = 0;
 
 
         private void PerformEDS()
@@ -172,16 +215,16 @@ namespace Virt_lab_25
                     break;
             }
         }
-
+        public int numberofoperations = 0;
+        int quantity = 0;
         private void Button2_Click(object sender, EventArgs e)
         {
-            
             if (quantity < 8) // проверка на количество измерений 
             {
                 bool isThisNumberWasUsed = false;
                 int number = dataGridView1.Rows.Add();
-                
-                    for(int i = 0; i < number; i++)
+                numberofoperations = number;
+                    for (int i = 0; i < number; i++)
                     {
                         if (Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value) == Convert.ToDouble(label2.Text))
                         {
@@ -233,6 +276,35 @@ namespace Virt_lab_25
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        public int countErrorsOfCheckResutls = 0;
+        private void check_Results_Click(object sender, EventArgs e)
+        {
+            double a, b;
+            if (quantity != 8)
+            {
+                MessageBox.Show("Вы провели меньше 8-ми опытов", "Внимание");
+            }
+            else
+            {
+                if (Double.TryParse(textBox1.Text, out a) && Double.TryParse(textBox2.Text, out b))
+                {
+                    if ((a == AMathematicalOperation()) && (b == BMathematicalOperation()))
+                    {
+                        MessageBox.Show("Ваши измерения коэффициентов верны", "Поздравляем");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ваши измерения коэффициентов неверны", "Ошибка");
+                        countErrorsOfCheckResutls++;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ваши измерения коэффициентов неверны", "Ошибка");
+                    countErrorsOfCheckResutls++;
+                }
+            }
         }
     }
 }
