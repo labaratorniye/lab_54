@@ -47,11 +47,12 @@ namespace Virt_lab_25
                         label2.Text = Convert.ToString(Convert.ToDouble(label2.Text) + 0.5);
                     }
                 }
-
+            PerformEDS();
         }
         
         private void button6_Click(object sender, EventArgs e)
         {
+
                 if (Convert.ToDouble(label2.Text) != -8)
                 {
                     if (Convert.ToDouble(label2.Text) == 0.5)
@@ -63,11 +64,13 @@ namespace Virt_lab_25
                         label2.Text = Convert.ToString(Convert.ToDouble(label2.Text) - 0.5);
                     }
                 }
-           
+            PerformEDS();
+
         }
         int quantity = 0;
 
-        private void Button2_Click(object sender, EventArgs e)
+
+        private void PerformEDS()
         {
             switch (label2.Text)
             {
@@ -168,6 +171,11 @@ namespace Virt_lab_25
                     label4.Text = "-3,1";
                     break;
             }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            
             if (quantity < 8) // проверка на количество измерений 
             {
                 bool isThisNumberWasUsed = false;
