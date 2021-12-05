@@ -10,7 +10,7 @@ namespace Virt_lab_25
 {
     public partial class Protocol : Form
     {
-        string key = "b22ca5898a4e4133bbce2ea2322a1916";
+        string key = "b22ca5898a4e4147bbce2ea2322a1226";
         string encryptedString = "";
         string decryptedString = "";
         public string fullName = "";
