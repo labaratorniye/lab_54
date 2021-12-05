@@ -20,9 +20,9 @@ namespace Virt_lab_25
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = Image.FromFile("TaskList2.png");
+            //pictureBox1.Image = Image.FromFile("TaskList2.png");
             pictureBox1.Parent = panel1;
-            pictureBox2.Image = Image.FromFile("TaskList1.png");
+            //pictureBox2.Image = Image.FromFile("TaskList1.png");
             pictureBox2.Parent = panel1;
             panel1.AutoScroll = true;
         }
@@ -31,6 +31,11 @@ namespace Virt_lab_25
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
