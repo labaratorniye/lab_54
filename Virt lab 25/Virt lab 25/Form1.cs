@@ -26,26 +26,14 @@ namespace Virt_lab_25
         }
         
         Form3 metodichka = new Form3();
-        private void button3_Click(object sender, EventArgs e)
-        {
-           
-        }
-        
+
         Form2 taskList = new Form2();
-        private void button5_Click(object sender, EventArgs e)
-        {
-           
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             
         }
-        
-        private void button4_Click(object sender, EventArgs e)
-        {
 
-        }
         private void button1_Click_1(object sender, EventArgs e)
         {
                 if (Convert.ToDouble(label2.Text) != 8)
@@ -59,8 +47,9 @@ namespace Virt_lab_25
                         label2.Text = Convert.ToString(Convert.ToDouble(label2.Text) + 0.5);
                     }
                 }
-        }
 
+        }
+        
         private void button6_Click(object sender, EventArgs e)
         {
                 if (Convert.ToDouble(label2.Text) != -8)
@@ -74,7 +63,9 @@ namespace Virt_lab_25
                         label2.Text = Convert.ToString(Convert.ToDouble(label2.Text) - 0.5);
                     }
                 }
+           
         }
+        int quantity = 0;
 
         private void Button2_Click(object sender, EventArgs e)
         {
@@ -177,6 +168,36 @@ namespace Virt_lab_25
                     label4.Text = "-3,1";
                     break;
             }
+            if (quantity < 8) // проверка на количество измерений 
+            {
+                bool isThisNumberWasUsed = false;
+                int number = dataGridView1.Rows.Add();
+                
+                    for(int i = 0; i < number; i++)
+                    {
+                        if (Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value) == Convert.ToDouble(label2.Text))
+                        {
+                        MessageBox.Show("Вы уже проводили измерения с данной величиной", "Сообщение");
+                        isThisNumberWasUsed = true;
+                        }
+                    }
+                if (!isThisNumberWasUsed)
+                {
+                    quantity++;
+                    dataGridView1.Rows[number].Cells[0].Value = quantity;
+                    dataGridView1.Rows[number].Cells[1].Value = label2.Text;
+                    dataGridView1.Rows[number].Cells[2].Value = label4.Text;
+                }
+                else
+                {
+                    dataGridView1.Rows.RemoveAt(number);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Вы провели максимальное число измерений", "Сообщение");
+            }
+
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -197,6 +218,11 @@ namespace Virt_lab_25
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
