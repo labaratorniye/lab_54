@@ -47,15 +47,15 @@ namespace Virt_lab_25
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Timers.Timer();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.timer4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // closemain
@@ -76,6 +76,7 @@ namespace Virt_lab_25
             this.Button2.TabIndex = 5;
             this.Button2.Text = "Измерить";
             this.Button2.UseVisualStyleBackColor = true;
+            this.Button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button3
             // 
@@ -179,52 +180,70 @@ namespace Virt_lab_25
             this.timer4.Enabled = true;
             this.timer4.SynchronizingObject = this;
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.DecimalPlaces = 1;
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.numericUpDown1.Increment = new decimal(new int[] {5, 0, 0, 65536});
-            this.numericUpDown1.Location = new System.Drawing.Point(699, 361);
-            this.numericUpDown1.Maximum = new decimal(new int[] {8, 0, 0, 0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {8, 0, 0, -2147483648});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.ReadOnly = true;
-            this.numericUpDown1.Size = new System.Drawing.Size(75, 22);
-            this.numericUpDown1.TabIndex = 20;
-            this.numericUpDown1.ThousandsSeparator = true;
-            // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label1.Location = new System.Drawing.Point(494, 363);
+            this.label1.Location = new System.Drawing.Point(506, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 20);
+            this.label1.Size = new System.Drawing.Size(100, 20);
             this.label1.TabIndex = 21;
-            this.label1.Text = "Сила тока в электромагните:\r\n";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.DecimalPlaces = 1;
-            this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.numericUpDown2.Increment = new decimal(new int[] {1, 0, 0, 65536});
-            this.numericUpDown2.Location = new System.Drawing.Point(699, 394);
-            this.numericUpDown2.Maximum = new decimal(new int[] {5, 0, 0, 0});
-            this.numericUpDown2.Minimum = new decimal(new int[] {5, 0, 0, 65536});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.ReadOnly = true;
-            this.numericUpDown2.Size = new System.Drawing.Size(75, 22);
-            this.numericUpDown2.TabIndex = 22;
-            this.numericUpDown2.ThousandsSeparator = true;
-            this.numericUpDown2.Value = new decimal(new int[] {5, 0, 0, 65536});
+            this.label1.Text = "Сила тока, мА\r\n";
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label2.Location = new System.Drawing.Point(505, 396);
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.label2.Location = new System.Drawing.Point(506, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(188, 20);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Сила тока в датчике Холла:\r\n:\r\n";
+            this.label2.Size = new System.Drawing.Size(100, 29);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "0.5\r\n";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.label3.Location = new System.Drawing.Point(683, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 20);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "ЭДС, мВ\r\n";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label4
+            // 
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.label4.Location = new System.Drawing.Point(683, 87);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 29);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "0.0\r\n";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.button1.Location = new System.Drawing.Point(489, 131);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(58, 35);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "+";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.button6.Location = new System.Drawing.Point(564, 131);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(58, 35);
+            this.button6.TabIndex = 26;
+            this.button6.Text = "-";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Form1
             // 
@@ -233,11 +252,13 @@ namespace Virt_lab_25
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(999, 425);
+            this.ClientSize = new System.Drawing.Size(999, 423);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.check_Results);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button5);
@@ -254,17 +275,18 @@ namespace Virt_lab_25
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.fileSystemWatcher1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.timer4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button6;
+
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+
         private System.Windows.Forms.Label label2;
 
         private System.Windows.Forms.Label label1;
-
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
 
         private System.Timers.Timer timer4;
 

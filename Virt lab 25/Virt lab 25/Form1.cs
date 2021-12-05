@@ -48,5 +48,138 @@ namespace Virt_lab_25
             protocol.fullName = name;
             protocol.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (Convert.ToDouble(label2.Text) != 8)
+            {
+                if (Convert.ToDouble(label2.Text) == -0.5)
+                {
+                    label2.Text = "0.5";
+                }
+                else
+                {
+                    label2.Text = Convert.ToString(Convert.ToDouble(label2.Text) + 0.5);
+                }
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToDouble(label2.Text) != -8)
+            {
+                if (Convert.ToDouble(label2.Text) == 0.5)
+                {
+                    label2.Text = "-0.5";
+                }
+                else
+                {
+                    label2.Text = Convert.ToString(Convert.ToDouble(label2.Text) - 0.5);
+                }
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            switch (label2.Text)
+            {
+                case "8":
+                    label4.Text = "3.5";
+                    break;
+                case "7.5":
+                    label4.Text = "3.3";
+                    break;
+                case "7":
+                    label4.Text = "3.1";
+                    break;
+                case "6.5":
+                    label4.Text = "2.9";
+                    break;
+                case "6":
+                    label4.Text = "2.7";
+                    break;
+                case "5.5":
+                    label4.Text = "2.5";
+                    break;
+                case "5":
+                    label4.Text = "2.2";
+                    break;
+                case "4.5":
+                    label4.Text = "2.0";
+                    break;
+                case "4":
+                    label4.Text = "1.8";
+                    break;
+                case "3.5":
+                    label4.Text = "1.6";
+                    break;
+                case "3":
+                    label4.Text = "1.4";
+                    break;
+                case "2.5":
+                    label4.Text = "1.2";
+                    break;
+                case "2":
+                    label4.Text = "1.0";
+                    break;
+                case "1.5":
+                    label4.Text = "0.8";
+                    break;
+                case "1":
+                    label4.Text = "0.6";
+                    break;
+                case "0.5":
+                    label4.Text = "0.4";
+                    break;
+                case "-0.5":
+                    label4.Text = "0.0";
+                    break;
+                case "-1":
+                    label4.Text = "-0.2";
+                    break;
+                case "-1.5":
+                    label4.Text = "-0.4";
+                    break;
+                case "-2":
+                    label4.Text = "-0.6";
+                    break;
+                case "-2.5":
+                    label4.Text = "-0.9";
+                    break;
+                case "-3":
+                    label4.Text = "-1.1";
+                    break;
+                case "-3.5":
+                    label4.Text = "-1.3";
+                    break;
+                case "-4":
+                    label4.Text = "-1.5";
+                    break;
+                case "-4.5":
+                    label4.Text = "-1.7";
+                    break;
+                case "-5":
+                    label4.Text = "-1.9";
+                    break;
+                case "-5.5":
+                    label4.Text = "-2.1";
+                    break;
+                case "-6":
+                    label4.Text = "-2.3";
+                    break;
+                case "-6.5":
+                    label4.Text = "-2.5";
+                    break;
+                case "-7":
+                    label4.Text = "-2.7";
+                    break;
+                case "-7.5":
+                    label4.Text = "-2.9";
+                    break;
+                case "-8":
+                    label4.Text = "-3.1";
+                    break;
+            }
+        }
     }
 }
