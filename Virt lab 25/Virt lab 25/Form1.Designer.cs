@@ -56,9 +56,13 @@ namespace Virt_lab_25
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timer4)).BeginInit();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.fileSystemWatcher1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.timer4)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,20 +92,17 @@ namespace Virt_lab_25
             this.dataGridView1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.nomer,
-            this.l});
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.Column1, this.nomer, this.l});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -112,7 +113,7 @@ namespace Virt_lab_25
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -120,7 +121,7 @@ namespace Virt_lab_25
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 10;
-            this.dataGridView1.Size = new System.Drawing.Size(282, 259);
+            this.dataGridView1.Size = new System.Drawing.Size(283, 259);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -284,6 +285,38 @@ namespace Virt_lab_25
             this.toolStripButton3.Text = "Протокол";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.label5.Location = new System.Drawing.Point(337, 286);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 21);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "a =";
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.label6.Location = new System.Drawing.Point(337, 329);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 21);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "b =";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(387, 285);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(65, 20);
+            this.textBox1.TabIndex = 30;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(387, 330);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(65, 20);
+            this.textBox2.TabIndex = 31;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,6 +325,10 @@ namespace Virt_lab_25
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(999, 423);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button1);
@@ -318,6 +355,12 @@ namespace Virt_lab_25
             this.PerformLayout();
 
         }
+
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button6;
