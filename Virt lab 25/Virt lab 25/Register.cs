@@ -65,7 +65,9 @@ namespace Virt_lab_25
 
         private void button1_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            ImportProtocol importProtocol = new ImportProtocol();
+            
+            importProtocol.Show();
         }
     }
 }

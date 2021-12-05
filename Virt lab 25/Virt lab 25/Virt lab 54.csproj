@@ -109,6 +109,9 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImportProtocol.resx">
+      <DependentUpon>ImportProtocol.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="metodichka.resx">
       <DependentUpon>metodichka.cs</DependentUpon>
     </EmbeddedResource>

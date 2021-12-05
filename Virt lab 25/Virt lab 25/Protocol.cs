@@ -1,6 +1,8 @@
 using System.Windows.Forms;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 using System.Security;
@@ -10,14 +12,22 @@ namespace Virt_lab_25
 {
     public partial class Protocol : Form
     {
+        DateTime currentDate = DateTime.Now;
+        
         string key = "b22ca5898a4e4147bbce2ea2322a1226";
         string encryptedString = "";
         string decryptedString = "";
         public string fullName = "";
+        public string groupName = "";
+        public string workName = "Лабораторная работа 'Изучение эффекта Холла в проводниках'";
+
         
         public Protocol()
         {
             InitializeComponent();
+            MaximizeBox = false;
+            saveFileDialog1.Filter = "Prot files(*.prot)|*.prot|All files(*.*)|*.*";
+            saveFileDialog1.AddExtension = true;
         }
 
         private void Protocol_Load(object sender, EventArgs e)
@@ -30,13 +40,18 @@ namespace Virt_lab_25
             var str = label1.Text;
             var encryptedString = AesOperation.EncryptString(key, str);
 
-            var decryptedString = AesOperation.DecryptString(key, encryptedString);
+            var currentDateEncrypted = AesOperation.EncryptString(key, currentDate.ToString());
+            var fullNameEncrypted = AesOperation.EncryptString(key, fullName);
             
-            this.encryptedString = encryptedString;
+            string[] encryptedStrings = new string[] {  currentDateEncrypted, fullNameEncrypted };
+
+            
 
 
-            System.IO.File.WriteAllText("protocol.prot", encryptedString);
-
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllLines(saveFileDialog1.FileName, encryptedStrings);
+            }
             MessageBox.Show("Протокол выгружен в папку с программой");
         }
 

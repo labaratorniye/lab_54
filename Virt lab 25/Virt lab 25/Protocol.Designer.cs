@@ -35,6 +35,7 @@ namespace Virt_lab_25
             this.importProtocol = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // exportProtocol
@@ -82,6 +83,8 @@ namespace Virt_lab_25
             this.Load += new System.EventHandler(this.Protocol_Load);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
 
