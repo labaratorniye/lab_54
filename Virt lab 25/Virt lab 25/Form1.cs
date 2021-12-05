@@ -13,7 +13,7 @@ namespace Virt_lab_25
 {
     public partial class Form1 : Form
     {
-        public string name = "123123";
+        public string name;
         
         public Form1()
         {
