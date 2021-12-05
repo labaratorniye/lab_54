@@ -16,11 +16,11 @@ namespace Virt_lab_25
         {
             InitializeComponent();
             button1.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
-            pictureBox1.Image = Image.FromFile("Metod1.png");
+            //pictureBox1.Image = Image.FromFile("Metod1.png");
             pictureBox1.Parent = panel1;
-            pictureBox2.Image = Image.FromFile("Metod2.png");
+            //pictureBox2.Image = Image.FromFile("Metod2.png");
             pictureBox2.Parent = panel1;
-            pictureBox3.Image = Image.FromFile("Metod3.png");
+           // pictureBox3.Image = Image.FromFile("Metod3.png");
             pictureBox3.Parent = panel1;
             panel1.AutoScroll = true;
         }
@@ -31,6 +31,11 @@ namespace Virt_lab_25
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
         {
 
         }
