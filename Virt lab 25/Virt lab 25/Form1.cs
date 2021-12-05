@@ -28,13 +28,13 @@ namespace Virt_lab_25
         Form3 metodichka = new Form3();
         private void button3_Click(object sender, EventArgs e)
         {
-            metodichka.Show();
+           
         }
         
         Form2 taskList = new Form2();
         private void button5_Click(object sender, EventArgs e)
         {
-            taskList.Show();
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,9 +44,7 @@ namespace Virt_lab_25
         
         private void button4_Click(object sender, EventArgs e)
         {
-            Protocol protocol = new Protocol();
-            protocol.fullName = name;
-            protocol.Show();
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -180,6 +178,23 @@ namespace Virt_lab_25
                     label4.Text = "-3.1";
                     break;
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            metodichka.Show();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            taskList.Show();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            Protocol protocol = new Protocol();
+            protocol.fullName = name;
+            protocol.Show();
         }
     }
 }
