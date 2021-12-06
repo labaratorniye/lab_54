@@ -64,6 +64,7 @@ namespace Virt_lab_25
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ImportProtocol";
             this.Text = "Просмотр протокола";
             this.ResumeLayout(false);

@@ -21,10 +21,12 @@ namespace Virt_lab_25
         {
            if (checkTextBox())
             {
-                string name = textBoxName.Text + " " + textBoxGroup.Text;
+                string name = textBoxName.Text;
+                string group = textBoxGroup.Text;
                 this.Hide();
                 Form1 form = new Form1();
                 form.name = name;
+                form.group = group;
                 form.Show();
             }
         }
@@ -41,7 +43,7 @@ namespace Virt_lab_25
 
         private bool checkTextBox()
         {
-            if ((textBoxName.Text.Trim() == string.Empty))
+            if (textBoxName.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Не заполнены поля");
                 return false;

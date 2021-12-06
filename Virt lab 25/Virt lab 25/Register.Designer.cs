@@ -125,6 +125,7 @@ namespace Virt_lab_25
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.closeRegister);
             this.Controls.Add(this.enterRegister);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Лаб. Работа";

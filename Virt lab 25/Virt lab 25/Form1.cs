@@ -14,6 +14,8 @@ namespace Virt_lab_25
     public partial class Form1 : Form
     {
         public string name;
+        public string group;
+        public bool workWasDone = false;
         
         public Form1()
         {
@@ -263,9 +265,19 @@ namespace Virt_lab_25
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            Protocol protocol = new Protocol();
-            protocol.fullName = name;
-            protocol.Show();
+            if (workWasDone)
+            {
+                Protocol protocol = new Protocol();
+                protocol.fullName = name;
+                protocol.groupName = group;
+                protocol.countErrors = countErrorsOfCheckResutls.ToString();
+                protocol.Show();  
+            }
+            else
+            {
+                MessageBox.Show("Вы не выполнили работу");
+            }
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -292,6 +304,7 @@ namespace Virt_lab_25
                     if ((a == AMathematicalOperation()) && (b == BMathematicalOperation()))
                     {
                         MessageBox.Show("Ваши измерения коэффициентов верны", "Поздравляем");
+                        workWasDone = true;
                     }
                     else
                     {

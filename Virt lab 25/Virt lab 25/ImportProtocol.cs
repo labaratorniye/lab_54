@@ -13,15 +13,17 @@ namespace Virt_lab_25
     public partial class ImportProtocol : Form
     {
         string key = "b22ca5898a4e4147bbce2ea2322a1226";
-        private string fullnameDecrypted = "";
-        private string groupNameDecrypted = "";
-        private string countErrorsDecrypted = "";
-        private string workNameDecrypted = "";
-        private string currentDateDecrypted = " ";
+        public string currentDateDecrypted = "";
+        public string fullNameDecrypted = "";
+        public string groupNameDecrypted = "";
+        public string countErrorsDecrypted = "";
+        public string workNameDecrypted = "";
+
 
         public ImportProtocol()
         {
             InitializeComponent();
+            MaximizeBox = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,44 +36,36 @@ namespace Virt_lab_25
                     if (Path.GetExtension(openFileDialog1.FileName) == ".prot")
                     {
                         var list = new List<string>();
-                        while (!sr.EndOfStream)
+                        while(!sr.EndOfStream)
                         {
                             string line = sr.ReadLine();
                             list.Add(line);
                         }
-
+                        
                         var arrTheoria = list.ToArray();
 
-                        this.fullnameDecrypted = AesOperation.DecryptString(key, arrTheoria[0]);
-                        this.groupNameDecrypted = AesOperation.DecryptString(key, arrTheoria[1]);
-                        this.countErrorsDecrypted = AesOperation.DecryptString(key, arrTheoria[2]);
-                        this.workNameDecrypted = AesOperation.DecryptString(key, arrTheoria[3]);
-                        this.currentDateDecrypted = AesOperation.DecryptString(key, arrTheoria[4]);
+                        this.fullNameDecrypted = AesOperation.DecryptString(key, arrTheoria[1]);
+                        this.groupNameDecrypted = AesOperation.DecryptString(key, arrTheoria[3]);
+                        this.countErrorsDecrypted = AesOperation.DecryptString(key, arrTheoria[4]);
+                        this.workNameDecrypted = AesOperation.DecryptString(key, arrTheoria[2]);
+                        this.currentDateDecrypted = AesOperation.DecryptString(key, arrTheoria[0]);
                         
-
                         MessageBox.Show("Протокол загружен");
-                    }
-                    else
+                    } else
                     {
                         MessageBox.Show("Не поддерживаемый файл");
                         return;
                     }
-
+                    
                     sr.Close();
-
-                    if (Convert.ToInt32(this.countErrorsDecrypted) == 0)
+                    
+                    if (Convert.ToInt32(countErrorsDecrypted) == 0)
                     {
-                        label1.Text = "Время выполнения работы: " + this.currentDateDecrypted + "\n" +
-                                      this.workNameDecrypted + "\nФИО:  " + this.fullnameDecrypted + "\nГруппа: " +
-                                      this.groupNameDecrypted + "\nЛабораторная работа выполнена успешно." +
-                                       "\nКоличество ошибок: " + this.countErrorsDecrypted;
+                        label1.Text = workNameDecrypted + "\nВыполнена в " + currentDateDecrypted  + "\nФИО: " + fullNameDecrypted + "\nГруппа: " + groupNameDecrypted + "\nРабота выполнена без ошибок";
                     }
                     else
                     {
-                        label1.Text = "Время выполнения работы: " + this.currentDateDecrypted + "\n" +
-                                      this.workNameDecrypted + "\nФИО:  " + this.fullnameDecrypted + "\nГруппа: " +
-                                      this.groupNameDecrypted + "\nЛабораторная работа выполнена с ошибками." +
-                                     "\nКоличество ошибок: " + this.countErrorsDecrypted;
+                        label1.Text = workNameDecrypted + "\nВыполнена в " + currentDateDecrypted + "\nФИО: " + fullNameDecrypted + "\nГруппа: " + groupNameDecrypted + "\nРабота выполнена с ошибками: " + countErrorsDecrypted;
                     }
                 }
                 catch (SecurityException ex)
