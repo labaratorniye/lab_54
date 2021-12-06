@@ -1,6 +1,8 @@
 using System.Windows.Forms;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 using System.Security;
@@ -10,19 +12,41 @@ namespace Virt_lab_25
 {
     public partial class Protocol : Form
     {
-        string key = "b22ca5898a4e4133bbce2ea2322a1916";
+        DateTime currentDate = DateTime.Now;
+        
+        string key = "b22ca5898a4e4147bbce2ea2322a1226";
         string encryptedString = "";
         string decryptedString = "";
         public string fullName = "";
+        public string groupName = "";
+        public string countErrors = "";
+        public string workName = "Лабораторная работа 'Изучение эффекта Холла в проводниках'";
+
+        public string currentDateDecrypted = "";
+        public string fullNameDecrypted = "";
+        public string groupNameDecrypted = "";
+        public string countErrorsDecrypted = "";
+        public string workNameDecrypted = "";
         
         public Protocol()
         {
             InitializeComponent();
+            MaximizeBox = false;
+            saveFileDialog1.Filter = "Prot files(*.prot)|*.prot";
+            saveFileDialog1.AddExtension = true;
         }
 
         private void Protocol_Load(object sender, EventArgs e)
         {
-            label1.Text = fullName;
+            if (Convert.ToInt32(countErrors) == 0)
+            {
+                label1.Text = workName + "\nВыполнена в " + currentDate  + "\nФИО: " + fullName + "\nГруппа: " + groupName + "\nРабота выполнена без ошибок";
+            }
+            else
+            {
+                label1.Text = workName + "\nВыполнена в " + currentDate + "\nФИО: " + fullName + "\nГруппа: " + groupName + "\nРабота выполнена с ошибками: " + countErrors;
+            }
+            
         }
 
         private void exportProtocol_Click(object sender, EventArgs e)
@@ -30,14 +54,22 @@ namespace Virt_lab_25
             var str = label1.Text;
             var encryptedString = AesOperation.EncryptString(key, str);
 
-            var decryptedString = AesOperation.DecryptString(key, encryptedString);
+            var currentDateEncrypted = AesOperation.EncryptString(key, currentDate.ToString());
+            var fullNameEncrypted = AesOperation.EncryptString(key, fullName);
+            var workNameEncrypted = AesOperation.EncryptString(key, workName);
+            var groupNameEncrypted = AesOperation.EncryptString(key, groupName);
+            var countErrorsEncrypted = AesOperation.EncryptString(key, countErrors);
             
-            this.encryptedString = encryptedString;
+            string[] encryptedStrings = new string[] {  currentDateEncrypted, fullNameEncrypted, workNameEncrypted, groupNameEncrypted, countErrorsEncrypted };
+
+            
 
 
-            System.IO.File.WriteAllText("protocol.prot", encryptedString);
-
-            MessageBox.Show("Протокол выгружен в папку с программой");
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllLines(saveFileDialog1.FileName, encryptedStrings);
+            }
+            MessageBox.Show("Протокол выгружен");
         }
 
         private void importProtocol_Click(object sender, EventArgs e)
@@ -49,23 +81,45 @@ namespace Virt_lab_25
                     var sr = new StreamReader(openFileDialog1.FileName);
                     if (Path.GetExtension(openFileDialog1.FileName) == ".prot")
                     {
-                        this.decryptedString = AesOperation.DecryptString(key, sr.ReadToEnd());
+                        var list = new List<string>();
+                        while(!sr.EndOfStream)
+                        {
+                            string line = sr.ReadLine();
+                            list.Add(line);
+                        }
+                        
+                        var arrTheoria = list.ToArray();
+
+                        this.fullNameDecrypted = AesOperation.DecryptString(key, arrTheoria[1]);
+                        this.groupNameDecrypted = AesOperation.DecryptString(key, arrTheoria[3]);
+                        this.countErrorsDecrypted = AesOperation.DecryptString(key, arrTheoria[4]);
+                        this.workNameDecrypted = AesOperation.DecryptString(key, arrTheoria[2]);
+                        this.currentDateDecrypted = AesOperation.DecryptString(key, arrTheoria[0]);
+                        
                         MessageBox.Show("Протокол загружен");
                     } else
                     {
                         MessageBox.Show("Не поддерживаемый файл");
+                        return;
                     }
                     
                     sr.Close();
+                    
+                    if (Convert.ToInt32(countErrorsDecrypted) == 0)
+                    {
+                        label1.Text = workNameDecrypted + "\nВыполнена в " + currentDateDecrypted  + "\nФИО: " + fullNameDecrypted + "\nГруппа: " + groupNameDecrypted + "\nРабота выполнена без ошибок";
+                    }
+                    else
+                    {
+                        label1.Text = workNameDecrypted + "\nВыполнена в " + currentDateDecrypted + "\nФИО: " + fullNameDecrypted + "\nГруппа: " + groupNameDecrypted + "\nРабота выполнена с ошибками: " + countErrorsDecrypted;
+                    }
                 }
                 catch (SecurityException ex)
                 {
-                    MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" +
-                                    $"Details:\n\n{ex.StackTrace}");
+                    MessageBox.Show("Чет не то");
                 }
             }
             //var decryptedString = AesOperation.DecryptString(key, File.ReadAllText("protocol.prot"));
-            label1.Text = this.decryptedString;
         }
     }
     
