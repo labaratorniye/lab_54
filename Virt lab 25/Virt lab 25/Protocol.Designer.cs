@@ -32,7 +32,6 @@ namespace Virt_lab_25
         private void InitializeComponent()
         {
             this.exportProtocol = new System.Windows.Forms.Button();
-            this.importProtocol = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -42,21 +41,11 @@ namespace Virt_lab_25
             // 
             this.exportProtocol.Location = new System.Drawing.Point(40, 375);
             this.exportProtocol.Name = "exportProtocol";
-            this.exportProtocol.Size = new System.Drawing.Size(350, 63);
+            this.exportProtocol.Size = new System.Drawing.Size(732, 63);
             this.exportProtocol.TabIndex = 0;
             this.exportProtocol.Text = "Экспортировать протокол";
             this.exportProtocol.UseVisualStyleBackColor = true;
             this.exportProtocol.Click += new System.EventHandler(this.exportProtocol_Click);
-            // 
-            // importProtocol
-            // 
-            this.importProtocol.Location = new System.Drawing.Point(422, 375);
-            this.importProtocol.Name = "importProtocol";
-            this.importProtocol.Size = new System.Drawing.Size(350, 63);
-            this.importProtocol.TabIndex = 1;
-            this.importProtocol.Text = "Импортировать протокол";
-            this.importProtocol.UseVisualStyleBackColor = true;
-            this.importProtocol.Click += new System.EventHandler(this.importProtocol_Click);
             // 
             // label1
             // 
@@ -77,7 +66,6 @@ namespace Virt_lab_25
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 450);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.importProtocol);
             this.Controls.Add(this.exportProtocol);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Protocol";
@@ -93,7 +81,6 @@ namespace Virt_lab_25
         private System.Windows.Forms.Label label1;
 
         private System.Windows.Forms.Button exportProtocol;
-        private System.Windows.Forms.Button importProtocol;
 
         #endregion
     }
