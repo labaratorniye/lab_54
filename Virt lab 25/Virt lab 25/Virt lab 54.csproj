@@ -186,5 +186,8 @@
   <ItemGroup>
     <None Include="bin\Debug\TaskList2.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poryadok.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
