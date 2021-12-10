@@ -74,7 +74,7 @@ namespace Virt_lab_25
                         array2[j + 1] = temp2;
                     }
                 }
-            }
+            } 
             
             chart1.Series[0].Points.AddXY(array2[0],array1[0]);
             chart1.Series[0].Points.AddXY(array2[1],array1[1]);

@@ -316,7 +316,7 @@ namespace Virt_lab_25
                     {
                         MessageBox.Show("Ваши измерения коэффициентов верны", "Поздравляем");
                         workWasDone = true;
-                        Graph graph = new Graph();
+                        Graph graph = new Graph(); 
                         graph.dataCells1Value1 = Convert.ToDouble(dataGridView1.Rows[0].Cells[1].Value);
                         graph.dataCells1Value2 = Convert.ToDouble(dataGridView1.Rows[1].Cells[1].Value);
                         graph.dataCells1Value3 = Convert.ToDouble(dataGridView1.Rows[2].Cells[1].Value);
