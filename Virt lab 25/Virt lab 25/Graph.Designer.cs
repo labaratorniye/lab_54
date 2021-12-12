@@ -35,7 +35,6 @@ namespace Virt_lab_25
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize) (this.chart1)).BeginInit();
             this.SuspendLayout();
@@ -50,29 +49,19 @@ namespace Virt_lab_25
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(634, 402);
+            this.chart1.Size = new System.Drawing.Size(634, 437);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
             title1.Text = " Δφ = aI + b";
             this.chart1.Titles.Add(title1);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(283, 409);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 29);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Построить график";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.label1.Location = new System.Drawing.Point(636, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 402);
+            this.label1.Size = new System.Drawing.Size(160, 437);
             this.label1.TabIndex = 2;
             this.label1.Text = "Нажмите кнопку \"Построить график\", чтобы построить график зависимости\r\n Δφ = aI +" + " b";
             // 
@@ -82,17 +71,15 @@ namespace Virt_lab_25
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.chart1);
             this.Name = "Graph";
-            this.Text = "Graph";
+            this.Text = "График работы";
+            this.Load += new System.EventHandler(this.Graph_Load);
             ((System.ComponentModel.ISupportInitialize) (this.chart1)).EndInit();
             this.ResumeLayout(false);
         }
 
         private System.Windows.Forms.Label label1;
-
-        private System.Windows.Forms.Button button1;
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
 

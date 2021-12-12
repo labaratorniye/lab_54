@@ -28,9 +28,10 @@ namespace Virt_lab_25
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void Graph_Load(object sender, EventArgs e)
         {
-            double[] array1 = new double[8];
+             double[] array1 = new double[8];
             double[] array2 = new double[8];
             array1[0] = this.kA * this.dataCells1Value1 + this.kB;
             array1[1] = this.kA * this.dataCells1Value2 + this.kB;
@@ -94,7 +95,7 @@ namespace Virt_lab_25
                           "7) X: " + Convert.ToString(array2[6]) + " Y: " + Convert.ToString(array1[6]) + "\n" +
                           "8) X: " + Convert.ToString(array2[7]) + " Y: " + Convert.ToString(array1[7]);
 
-            button1.Enabled = false;
+           
         }
     }
 }
