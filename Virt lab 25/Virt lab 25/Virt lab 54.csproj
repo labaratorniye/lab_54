@@ -199,5 +199,8 @@
   <ItemGroup>
     <None Include="Resources\poryadok.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\digital-7.ttf" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
