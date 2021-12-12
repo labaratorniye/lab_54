@@ -305,6 +305,26 @@ namespace Virt_lab_25
                     {
                         MessageBox.Show("Ваши измерения коэффициентов верны", "Поздравляем");
                         workWasDone = true;
+                        Graph graph = new Graph();
+                        graph.dataCells1Value1 = Convert.ToDouble(dataGridView1.Rows[0].Cells[1].Value);
+                        graph.dataCells1Value2 = Convert.ToDouble(dataGridView1.Rows[1].Cells[1].Value);
+                        graph.dataCells1Value3 = Convert.ToDouble(dataGridView1.Rows[2].Cells[1].Value);
+                        graph.dataCells1Value4 = Convert.ToDouble(dataGridView1.Rows[3].Cells[1].Value);
+                        graph.dataCells1Value5 = Convert.ToDouble(dataGridView1.Rows[4].Cells[1].Value);
+                        graph.dataCells1Value6 = Convert.ToDouble(dataGridView1.Rows[5].Cells[1].Value);
+                        graph.dataCells1Value7 = Convert.ToDouble(dataGridView1.Rows[6].Cells[1].Value);
+                        graph.dataCells1Value8 = Convert.ToDouble(dataGridView1.Rows[7].Cells[1].Value);
+                        graph.dataCells2Value1 = Convert.ToDouble(dataGridView1.Rows[0].Cells[2].Value);
+                        graph.dataCells2Value2 = Convert.ToDouble(dataGridView1.Rows[1].Cells[2].Value);
+                        graph.dataCells2Value3 = Convert.ToDouble(dataGridView1.Rows[2].Cells[2].Value);
+                        graph.dataCells2Value4 = Convert.ToDouble(dataGridView1.Rows[3].Cells[2].Value);
+                        graph.dataCells2Value5 = Convert.ToDouble(dataGridView1.Rows[4].Cells[2].Value);
+                        graph.dataCells2Value6 = Convert.ToDouble(dataGridView1.Rows[5].Cells[2].Value);
+                        graph.dataCells2Value7 = Convert.ToDouble(dataGridView1.Rows[6].Cells[2].Value);
+                        graph.dataCells2Value8 = Convert.ToDouble(dataGridView1.Rows[7].Cells[2].Value);
+                        graph.kA = AMathematicalOperation();
+                        graph.kB = BMathematicalOperation();
+                        graph.Show();
                     }
                     else
                     {
