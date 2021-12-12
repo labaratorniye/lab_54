@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Text;
+using System.IO;
 
 namespace Virt_lab_25
 {
@@ -20,7 +22,9 @@ namespace Virt_lab_25
         public Form1()
         {
             InitializeComponent();
+            
         }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -78,6 +82,11 @@ namespace Virt_lab_25
         private void Form1_Load(object sender, EventArgs e)
         {
             
+            PrivateFontCollection customFont = new PrivateFontCollection();
+            customFont.AddFontFile("digital-7.ttf");
+            Font lcdFont = new Font(customFont.Families[0], 36);
+            label2.Font = lcdFont;
+            label4.Font = lcdFont;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -338,6 +347,11 @@ namespace Virt_lab_25
                     countErrorsOfCheckResutls++;
                 }
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
