@@ -26,6 +26,7 @@ namespace Virt_lab_25
         public Graph()
         {
             InitializeComponent();
+            MaximizeBox = false;
         }
 
 

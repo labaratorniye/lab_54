@@ -23,6 +23,8 @@ namespace Virt_lab_25
            // pictureBox3.Image = Image.FromFile("Metod3.png");
             pictureBox3.Parent = panel1;
             panel1.AutoScroll = true;
+
+            MaximizeBox = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

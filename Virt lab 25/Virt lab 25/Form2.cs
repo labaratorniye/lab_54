@@ -16,6 +16,7 @@ namespace Virt_lab_25
         {
             InitializeComponent();
             button1.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
+            MaximizeBox = false;
         }
 
         private void Form2_Load(object sender, EventArgs e)

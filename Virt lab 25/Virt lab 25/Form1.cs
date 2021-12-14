@@ -22,7 +22,7 @@ namespace Virt_lab_25
         public Form1()
         {
             InitializeComponent();
-            
+            MaximizeBox = false;
         }
         
 
