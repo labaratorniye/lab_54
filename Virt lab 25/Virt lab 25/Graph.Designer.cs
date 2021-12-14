@@ -72,6 +72,7 @@ namespace Virt_lab_25
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chart1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Graph";
             this.Text = "График работы";
             this.Load += new System.EventHandler(this.Graph_Load);
