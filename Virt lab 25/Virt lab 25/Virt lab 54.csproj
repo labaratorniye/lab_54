@@ -200,6 +200,10 @@
     <None Include="Resources\poryadok.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\1.PNG" />
+    <None Include="Resources\2.PNG" />
+    <None Include="Resources\3.PNG" />
+    <None Include="Resources\4.PNG" />
     <Content Include="Resources\digital-7.ttf" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
