@@ -18,7 +18,7 @@ namespace Virt_lab_25
         public string groupNameDecrypted = "";
         public string countErrorsDecrypted = "";
         public string workNameDecrypted = "";
-
+        
 
         public ImportProtocol()
         {
